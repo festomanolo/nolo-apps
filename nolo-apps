@@ -367,4 +367,4 @@ execute_selected() {
     case "$1" in
         5) echo; ok "Exited nolo-apps."; exit 0 ;;
         *)
-        
+            dispatc
