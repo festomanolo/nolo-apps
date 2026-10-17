@@ -13,6 +13,11 @@ CLI_URL="https://antigravity.google/cli/install.sh"
 IDE_APP="Antigravity IDE.app"
 ZSH_PATTERN='^[[:space:]]*(export[[:space:]]+PATH=|alias[[:space:]]+agy=).*(antigravity|agy)'
 
+# Cursor machine-ID storage paths (macOS)
+CURSOR_STORAGE="$HOME/Library/Application Support/Cursor/User/globalStorage/storage.json"
+CURSOR_SQLITE="$HOME/Library/Application Support/Cursor/User/globalStorage/state.vscdb"
+CURSOR_MACHINE_ID_FILE="$HOME/Library/Application Support/Cursor/machineId"
+
 DRY_RUN=0
 ASSUME_YES=0
 
