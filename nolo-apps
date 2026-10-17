@@ -362,3 +362,4 @@ OPTIONS=(
 ACTIONS=(all cli ide uninstall scan exit)
 
 execute_selected() {
+    show_cu
