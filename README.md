@@ -156,4 +156,8 @@ The IDE URL is pinned to a version. If it stops working, update `DMG_URL` to the
 
 | Problem | Fix |
 | --- | --- |
-| `Intel build on Apple Silicon` warning | The IDE runs under Rosetta 2. Install it with `softwareupdate --install-rosetta --agree
+| `Intel build on Apple Silicon` warning | The IDE runs under Rosetta 2. Install it with `softwareupdate --install-rosetta --agree-to-license`. |
+| `sudo authentication failed` | Run from a real terminal. `sudo` needs a TTY for the password prompt. |
+| `Could not download` | Check the network, then confirm `DMG_URL` or `CLI_URL` is current. |
+| Scan lists something you want to keep | Remove it by hand, or edit the scan lists in the script. The uninstall prompt always shows the list first. |
+| 
