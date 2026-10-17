@@ -258,4 +258,4 @@ uninstall_all() {
 
     total=$(printf '%s\n' "$items" | grep -c .)
     if [ "$total" -gt 0 ]; then
-        sec
+        section "Remo
