@@ -271,4 +271,4 @@ uninstall_all() {
     fi
 
     if zshrc_hits; then
-        s
+        section "Cl
