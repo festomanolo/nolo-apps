@@ -51,4 +51,4 @@ confirm() {
     local ans
     printf "  ${YELLOW}%s [y/N] ${RESET}" "$1"
     IFS= read -r ans
-    
+    [[ "$ans" =
