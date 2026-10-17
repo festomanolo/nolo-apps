@@ -217,4 +217,4 @@ install_ide() {
     progress_bar 2 4 "Copying to /Applications..."
     sudo rm -rf "/Applications/$IDE_APP" && sudo cp -R "$src" /Applications/ || rc=1
 
-    progr
+    progress_bar 3 4
