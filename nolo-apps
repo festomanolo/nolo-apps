@@ -386,4 +386,6 @@ menu_loop() {
             else
                 printf "     ${GRAY}[%s]${RESET} %s\n" "$num" "${OPTIONS[$i]}"
             fi
-        d
+        done
+
+      
