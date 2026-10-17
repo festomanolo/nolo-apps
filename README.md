@@ -147,4 +147,13 @@ Edit the variables at the top of `nolo-apps`:
 | --- | --- |
 | `DMG_URL` | IDE disk image URL (currently Antigravity 2.5.5, `darwin-x64`) |
 | `CLI_URL` | CLI install script URL |
-| `IDE_APP`
+| `IDE_APP` | Application bundle name |
+| `ZSH_PATTERN` | Regex for `~/.zshrc` lines to remove |
+
+The IDE URL is pinned to a version. If it stops working, update `DMG_URL` to the current release.
+
+## Troubleshooting
+
+| Problem | Fix |
+| --- | --- |
+| `Intel build on Apple Silicon` warning | The IDE runs under Rosetta 2. Install it with `softwareupdate --install-rosetta --agree
