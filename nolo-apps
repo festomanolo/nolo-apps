@@ -295,4 +295,4 @@ scan_residuals() {
     section "Scanning for Antigravity files and residuals"
     local found=0 p
     while IFS= read -r p; do
-        [ -z "$
+        [ -z "$p" ] && co
