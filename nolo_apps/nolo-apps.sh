@@ -37,8 +37,8 @@ trap 'show_cursor' EXIT
 # Output helpers
 # ------------------------------------------------------------------------------
 log()     { printf "  %b\n" "$*"; }
-ok()      { printf "  ${GREEN}✔ %s${RESET}\n" "$*"; }
-warn()    { printf "  ${YELLOW}⚠ %s${RESET}\n" "$*"; }
+ok()      { printf "  ${GREEN}+ %s${RESET}\n" "$*"; }
+warn()    { printf "  ${YELLOW}! %s${RESET}\n" "$*"; }
 err()     { printf "  ${RED}✖ %s${RESET}\n" "$*" >&2; }
 section() { printf "\n  ${CYAN}${BOLD}➜ %s${RESET}\n\n" "$*"; }
 
