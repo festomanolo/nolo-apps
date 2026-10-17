@@ -137,8 +137,8 @@ kind_of() {
 draw_header() {
     clear
     local cli ide count badge=""
-    if [ -n "$(cli_path)" ]; then cli="${GREEN}● INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
-    else cli="${GRAY}○ NOT FOUND${RESET}"; fi
+    if [ -n "$(cli_path)" ]; then cli="${GREEN}* INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
+    else cli="${GRAY}- NOT FOUND${RESET}"; fi
     if ide_path >/dev/null; then ide="${GREEN}● INSTALLED${RESET} ${DIM}$(ide_path)${RESET}"
     else ide="${GRAY}○ NOT FOUND${RESET}"; fi
     count=$(found_items | wc -l | tr -d ' ')
