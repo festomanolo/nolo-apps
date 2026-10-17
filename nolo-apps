@@ -178,4 +178,4 @@ install_cli() {
 }
 
 install_ide() {
-   
+    section "I
