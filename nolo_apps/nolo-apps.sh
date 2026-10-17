@@ -146,8 +146,8 @@ draw_header() {
     else count="${GREEN}0 (clean)${RESET}"; fi
     [ "$DRY_RUN" -eq 1 ] && badge="  ${YELLOW}[DRY-RUN]${RESET}"
 
-    printf "  ${BOLD}${CYAN}⚡ NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
-    printf "  ${PURPLE}─────────────────────────────────────────────────────────────${RESET}\n"
+    printf "\n  ${BOLD}${CYAN}NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
+    printf "  ${PURPLE}-------------------------------------------------------------${RESET}\n"
     printf "  Arch       : %s\n" "$(uname -m)"
     printf "  CLI        : %b\n" "$cli"
     printf "  IDE        : %b\n" "$ide"
