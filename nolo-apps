@@ -17,4 +17,4 @@ DRY_RUN=0
 ASSUME_YES=0
 
 # ANSI styling
-BOL
+BOLD="\033[1m"
