@@ -135,4 +135,4 @@ draw_header() {
     else cli="${GRAY}○ NOT FOUND${RESET}"; fi
     if ide_path >/dev/null; then ide="${GREEN}● INSTALLED${RESET} ${DIM}$(ide_path)${RESET}"
     else ide="${GRAY}○ NOT FOUND${RESET}"; fi
-    count=$(found
+    count=$(found_items | wc
