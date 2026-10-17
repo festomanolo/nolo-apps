@@ -174,4 +174,4 @@ install_cli() {
     fi
     bash "$tmp"; local rc=$?
     rm -f "$tmp"
-    if [ "
+    if [ "$rc" -eq 0 
