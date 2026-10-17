@@ -396,4 +396,6 @@ menu_loop() {
                 "[B") selected=$(( (selected + 1) % n )) ;;
             esac
             continue
-       
+        fi
+
+      
