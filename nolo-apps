@@ -88,3 +88,4 @@ ide_path() {
 }
 
 bin_targets() {
+    printf 
