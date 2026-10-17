@@ -97,4 +97,4 @@ dotfile_targets() {
 }
 
 library_matches() {
-    find "$HOME
+    find "$HOME/Library" -
