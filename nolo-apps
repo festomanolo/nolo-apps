@@ -413,4 +413,4 @@ menu_loop() {
 ACTION=""
 while [ $# -gt 0 ]; do
     case "$1" in
-        --dry-run)     D
+        --dry-run)     DRY_RUN=1 ;;
