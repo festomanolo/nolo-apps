@@ -291,7 +291,7 @@ install_ide() {
         confirm "Antigravity IDE is already installed. Replace it?" || { warn "Skipped."; return 1; }
     fi
     if [ "$DRY_RUN" -eq 1 ]; then
-        log "${DIM}[dry-run] download DMG → mount → copy '$IDE_APP' to /Applications → strip quarantine → detach${RESET}"
+        log "${DIM}[dry-run] download DMG -> mount -> copy '$IDE_APP' to /Applications -> strip quarantine -> detach${RESET}"
         return 0
     fi
 
