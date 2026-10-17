@@ -92,4 +92,4 @@ bin_targets() {
 }
 
 dotfile_targets() {
-    printf '%s\
+    printf '%s\n' "$HOME/.
