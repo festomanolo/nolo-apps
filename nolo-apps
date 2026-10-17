@@ -93,4 +93,4 @@ bin_targets() {
 
 dotfile_targets() {
     printf '%s\n' "$HOME/.antigravity" "$HOME/.antigravity-ide" "$HOME/.antigravity_tools" \
-        "$HOME/.gem
+        "$HOME/.gemini/antigra
