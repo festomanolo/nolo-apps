@@ -313,3 +313,5 @@ scan_residuals() {
         log "${DIM}$found item(s) found. Use 'Deep Uninstall' to remove them.${RESET}"
     fi
 }
+
+# -------
