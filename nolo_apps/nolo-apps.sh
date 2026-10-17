@@ -284,6 +284,7 @@ install_cli() {
 }
 
 install_ide() {
+    [ "$_RESET_DONE" -eq 0 ] && reset_machine_id && echo
     section "Installing Antigravity IDE (Intel x64)"
     if [ "$(uname -m)" = "arm64" ]; then
         warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwareupdate --install-rosetta --agree-to-license)."
