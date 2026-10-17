@@ -167,4 +167,5 @@ install_cli() {
     fi
     # Download first, then execute: a failed download never runs partial code.
     local tmp
-    tmp=$(mktemp -t nolo-agy) || return 
+    tmp=$(mktemp -t nolo-agy) || return 1
+    if ! 
