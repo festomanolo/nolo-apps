@@ -97,4 +97,4 @@ dotfile_targets() {
 }
 
 library_matches() {
-    find "$HOME/Library" -maxdepth 3 -iname "*antigravity*
+    find "$HOME/Library" -maxdepth 3 -iname "*antigravity*" 2>/dev/nu
