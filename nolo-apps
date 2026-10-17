@@ -111,4 +111,4 @@ found_items() {
         bin_targets
         dotfile_targets
         library_matches
-    } | while I
+    } | while IFS= read -r
