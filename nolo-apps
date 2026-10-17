@@ -273,4 +273,5 @@ uninstall_all() {
     if zshrc_hits; then
         section "Cleaning ~/.zshrc"
         run cp "$HOME/.zshrc" "$HOME/.zshrc.nolo-bak"
-        run sed -i '' -E "/$ZSH_PATTERN/d" "$HOME
+        run sed -i '' -E "/$ZSH_PATTERN/d" "$HOME/.zshrc"
+  
