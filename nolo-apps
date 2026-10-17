@@ -419,4 +419,5 @@ while [ $# -gt 0 ]; do
         --install-cli) ACTION=cli ;;
         --install-ide) ACTION=ide ;;
         --uninstall)   ACTION=uninstall ;;
-        --scan)        ACTION=scan
+        --scan)        ACTION=scan ;;
+       
