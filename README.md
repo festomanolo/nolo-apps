@@ -128,4 +128,7 @@ Before editing `~/.zshrc`, the script copies it to `~/.zshrc.nolo-bak`.
 
 1. **Preview first.** Scan and dry-run show what would change without changing it.
 2. **Confirm before delete.** Uninstall lists every target and waits for `y`.
-3. **Narrow matches.** Shell-config edits are limited to Antigravity PATH and alias lines. Process kills match the exact app bundle path or 
+3. **Narrow matches.** Shell-config edits are limited to Antigravity PATH and alias lines. Process kills match the exact app bundle path or the `agy` binary name.
+4. **Backups.** `~/.zshrc` is copied to `~/.zshrc.nolo-bak` before any edit.
+5. **Verified installers.** The CLI installer is downloaded to a temp file before it runs, so a failed download never executes partial code. The IDE image must contain `Antigravity IDE.app`, or the install stops.
+6. **Clean failures.** Temp directories and mounted dis
