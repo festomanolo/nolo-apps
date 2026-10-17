@@ -40,4 +40,5 @@ section() { printf "\n  ${CYAN}${BOLD}➜ %s${RESET}\n\n" "$*"; }
 run() {
     if [ "$DRY_RUN" -eq 1 ]; then
         printf "  ${DIM}[dry-run] %s${RESET}\n" "$*"
-        r
+        return 0
+  
