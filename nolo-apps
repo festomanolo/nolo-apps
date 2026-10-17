@@ -251,4 +251,4 @@ uninstall_all() {
     fi
 
     section "Stopping processes"
-    run p
+    run pkill -f "/
