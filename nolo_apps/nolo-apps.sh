@@ -459,8 +459,8 @@ EOF
 # Interactive menu
 # ------------------------------------------------------------------------------
 OPTIONS=(
-    "🚀 Install Everything     (CLI + Intel IDE)"
-    "⚡ Install CLI Only       (official install script)"
+    "  Install Everything      CLI + Intel IDE"
+    "  Install CLI Only        official install script"
     "💻 Install IDE Only       (Intel DMG)"
     "🔄 Reset Cursor Machine ID (standalone)"
     "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
