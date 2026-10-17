@@ -49,4 +49,4 @@ run() {
 confirm() {
     [ "$ASSUME_YES" -eq 1 ] && return 0
     local ans
-    printf "  ${YELLOW}%s [y
+    printf "  ${YELLOW}%s [y/N] ${RESET
