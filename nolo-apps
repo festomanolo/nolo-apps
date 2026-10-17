@@ -214,4 +214,5 @@ install_ide() {
         hdiutil detach "$mnt" -quiet; rm -rf "$dir"; return 1
     fi
 
-    progress_bar 2 4 "Copying to /Applications...
+    progress_bar 2 4 "Copying to /Applications..."
+    sudo 
