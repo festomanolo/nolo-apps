@@ -364,4 +364,5 @@ ACTIONS=(all cli ide uninstall scan exit)
 execute_selected() {
     show_cursor
     draw_header
-    case "$
+    case "$1" in
+     
