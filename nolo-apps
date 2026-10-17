@@ -120,4 +120,5 @@ kind_of() {
     case "$1" in
         /Applications/*|"$HOME"/Applications/*) echo "APP" ;;
         */.local/bin/*)                         echo "BINARY" ;;
-        "$HOME"/Library/*)                      echo "LIBRAR
+        "$HOME"/Library/*)                      echo "LIBRARY" ;;
+     
