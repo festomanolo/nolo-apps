@@ -292,4 +292,4 @@ uninstall_all() {
 }
 
 scan_residuals() {
-    section "Scanning for Antigravit
+    section "Scanning for Antigravity files and
