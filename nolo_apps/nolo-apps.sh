@@ -450,10 +450,10 @@ Actions (omit for interactive menu):
   --scan                Scan for residuals, no changes
 
 Options:
-  --dry-run          Print what would run, change nothing
-  -y, --yes          Skip confirmation prompts
-  -h, --help         Show this help
-  --version          Show version
+  --dry-run             Print what would run, change nothing
+  -y, --yes             Skip confirmation prompts
+  -h, --help            Show this help
+  --version             Show version
 EOF
 }
 
