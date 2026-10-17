@@ -84,4 +84,7 @@ ide_path() {
     for p in "/Applications/$IDE_APP" "/Applications/Antigravity.app" "$HOME/Applications/$IDE_APP"; do
         if [ -d "$p" ]; then echo "$p"; return 0; fi
     done
-    return
+    return 1
+}
+
+bin_t
