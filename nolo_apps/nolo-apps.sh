@@ -66,8 +66,8 @@ progress_bar() {
     local filled=$(( current * width / total ))
     local empty=$(( width - filled ))
     local bar="" i
-    for ((i = 0; i < filled; i++)); do bar+="█"; done
-    for ((i = 0; i < empty; i++)); do bar+="░"; done
+    for ((i = 0; i < filled; i++)); do bar+="#"; done
+    for ((i = 0; i < empty; i++)); do bar+="-"; done
     printf "\r  ${PURPLE}[${CYAN}%s${PURPLE}]${RESET} ${BOLD}%3d%%${RESET} %-44s" \
         "$bar" $(( current * 100 / total )) "$label"
     [ "$current" -eq "$total" ] && echo
