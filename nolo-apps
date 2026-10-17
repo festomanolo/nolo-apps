@@ -229,4 +229,5 @@ install_ide() {
 
 uninstall_all() {
     section "Deep uninstall: Antigravity IDE, CLI and residuals"
-    local items total i=
+    local items total i=0 left
+    
