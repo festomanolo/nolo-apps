@@ -35,6 +35,15 @@ Nothing to install. Nothing to `pip install` or `brew install`.
 
 ## Quick start
 
+### Install from PyPI (recommended)
+
+```bash
+pip install nolo-apps
+nolo-apps
+```
+
+### Install from source
+
 ```bash
 git clone https://github.com/festomanolo/nolo-apps.git
 cd nolo-apps
