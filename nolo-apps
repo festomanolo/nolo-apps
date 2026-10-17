@@ -329,4 +329,4 @@ dispatch() {
 
 usage() {
     cat << EOF
-nolo-app
+nolo-apps v$VERSION
