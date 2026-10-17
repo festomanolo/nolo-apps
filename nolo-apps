@@ -277,4 +277,4 @@ uninstall_all() {
         ok "PATH/alias lines removed (backup: ~/.zshrc.nolo-bak)."
     fi
 
-    if [ "$DR
+    if [ "$DRY_RUN" -eq 
