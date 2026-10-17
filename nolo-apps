@@ -286,4 +286,4 @@ uninstall_all() {
     if [ "$left" -eq 0 ] && ! zshrc_hits; then
         ok "Deep uninstall finished. No Antigravity files or residuals remain."
     else
-        warn "$left residual item(s) could not be removed. 
+        warn "$left residual item(s) could not be removed. Run the sca
