@@ -237,4 +237,4 @@ uninstall_all() {
         return 0
     fi
 
-    lo
+    log "${BOLD}T
