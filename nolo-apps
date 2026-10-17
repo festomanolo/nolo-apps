@@ -296,4 +296,5 @@ scan_residuals() {
     local found=0 p
     while IFS= read -r p; do
         [ -z "$p" ] && continue
-        printf "  ${YELLOW}%-8s${RESET} %s ${DIM}(%s)${RES
+        printf "  ${YELLOW}%-8s${RESET} %s ${DIM}(%s)${RESET}\n" \
+  
