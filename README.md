@@ -23,4 +23,23 @@ Installing and fully removing a macOS app plus its CLI usually means hunting thr
 - **Read-only scan.** Lists every residual path with its type and size. Changes nothing.
 - **Dry run.** Prints every command it would run and executes none of them.
 - **Scriptable.** Every action has a flag for use in shell scripts and automation.
-- **Safe by default.** Deletes are listed and confirmed first. `~/.zshrc` is backed up before it change
+- **Safe by default.** Deletes are listed and confirmed first. `~/.zshrc` is backed up before it changes.
+
+## Requirements
+
+- macOS (tested on Darwin 25.x)
+- Bash 3.2 or newer (the default macOS shell works)
+- `curl`, `hdiutil`, `xattr`, `sudo`: all present on a stock Mac
+
+Nothing to install. Nothing to `pip install` or `brew install`.
+
+## Quick start
+
+```bash
+git clone https://github.com/festomanolo/nolo-apps.git
+cd nolo-apps
+chmod +x nolo-apps
+./nolo-apps
+```
+
+Optio
