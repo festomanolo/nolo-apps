@@ -72,4 +72,5 @@ progress_bar() {
 # Detection
 # ------------------------------------------------------------------------------
 cli_path() {
-    if [ -x "$HOME/.local/bin/agy" ]; the
+    if [ -x "$HOME/.local/bin/agy" ]; then
+        e
