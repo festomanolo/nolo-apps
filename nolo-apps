@@ -373,4 +373,5 @@ execute_selected() {
     esac
 }
 
-menu_
+menu_loop() {
+  
