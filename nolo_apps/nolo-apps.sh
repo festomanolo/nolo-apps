@@ -492,7 +492,7 @@ menu_loop() {
             if [ "$i" -eq "$selected" ]; then
                 printf "  ${BG_SELECT}${CYAN} > [%s]${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
             else
-                printf "     ${GRAY}[%s]${RESET} %s\n" "$num" "${OPTIONS[$i]}"
+                printf "     ${GRAY}[%s]${RESET}%s\n" "$num" "${OPTIONS[$i]}"
             fi
         done
 
