@@ -414,4 +414,4 @@ ACTION=""
 while [ $# -gt 0 ]; do
     case "$1" in
         --dry-run)     DRY_RUN=1 ;;
-        -y|--yes)    
+        -y|--yes)      ASSUME_YE
