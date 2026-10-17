@@ -80,4 +80,5 @@ cli_path() {
 }
 
 ide_path() {
-    
+    local p
+   
