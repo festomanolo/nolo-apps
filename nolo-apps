@@ -249,3 +249,5 @@ uninstall_all() {
     if [ "$DRY_RUN" -eq 0 ]; then
         sudo -v || { err "sudo authentication failed."; return 1; }
     fi
+
+    secti
