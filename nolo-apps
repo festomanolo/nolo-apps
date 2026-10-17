@@ -257,3 +257,4 @@ uninstall_all() {
     [ "$DRY_RUN" -eq 0 ] && sleep 0.5
 
     total=$(printf '%s\n' "$items" | grep -c .)
+    if [ "
