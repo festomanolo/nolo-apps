@@ -261,4 +261,5 @@ uninstall_all() {
         section "Removing files"
         while IFS= read -r p; do
             [ -z "$p" ] && continue
-            i=$((
+            i=$((i + 1))
+   
