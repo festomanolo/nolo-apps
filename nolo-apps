@@ -179,4 +179,4 @@ install_cli() {
 
 install_ide() {
     section "Installing Antigravity IDE (Intel x64)"
-    if [ "$(uname -m)" = "
+    if [ "$(uname -m)" = "arm64" ]; t
