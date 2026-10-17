@@ -283,4 +283,5 @@ uninstall_all() {
     fi
 
     left=$(found_items | grep -c .)
-    if [ "$left" -eq 0 ] && ! zshrc_hits; th
+    if [ "$left" -eq 0 ] && ! zshrc_hits; then
+        
