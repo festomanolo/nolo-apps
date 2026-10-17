@@ -275,3 +275,6 @@ uninstall_all() {
         run cp "$HOME/.zshrc" "$HOME/.zshrc.nolo-bak"
         run sed -i '' -E "/$ZSH_PATTERN/d" "$HOME/.zshrc"
         ok "PATH/alias lines removed (backup: ~/.zshrc.nolo-bak)."
+    fi
+
+  
