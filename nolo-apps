@@ -177,4 +177,5 @@ install_cli() {
     if [ "$rc" -eq 0 ]; then ok "Antigravity CLI installed."; else err "CLI installer exited with $rc."; return 1; fi
 }
 
-install_
+install_ide() {
+   
