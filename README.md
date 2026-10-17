@@ -175,4 +175,12 @@ nolo-apps/
 Small, focused pull requests are welcome.
 
 1. Fork the repo and create a branch.
-2. Run `bash -n nolo-apps` to c
+2. Run `bash -n nolo-apps` to check syntax.
+3. Test with `./nolo-apps --dry-run ...` before any real run.
+4. Open a pull request that explains what changed and how you tested it.
+
+Bug reports should include your macOS version, CPU architecture (`uname -m`), and the output of `./nolo-apps --scan`.
+
+## License
+
+No license file yet. Add one (for example MIT) before you accept outside contributions.
