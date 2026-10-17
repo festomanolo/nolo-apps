@@ -173,4 +173,4 @@ install_cli() {
         rm -f "$tmp"; return 1
     fi
     bash "$tmp"; local rc=$?
-    r
+    rm -f "$tmp"
