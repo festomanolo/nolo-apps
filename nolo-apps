@@ -196,4 +196,4 @@ install_ide() {
     dir=$(mktemp -d -t nolo-apps) || return 1
     dmg="$dir/antigravity.dmg"
     mnt="$dir/mnt"
-    sr
+    src="$mnt/$ID
