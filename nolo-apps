@@ -360,3 +360,5 @@ OPTIONS=(
     "❌ Exit nolo-apps"
 )
 ACTIONS=(all cli ide uninstall scan exit)
+
+execute_se
