@@ -42,4 +42,7 @@ run() {
         printf "  ${DIM}[dry-run] %s${RESET}\n" "$*"
         return 0
     fi
-    "$
+    "$@"
+}
+
+# Yes
