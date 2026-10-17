@@ -180,4 +180,4 @@ install_cli() {
 install_ide() {
     section "Installing Antigravity IDE (Intel x64)"
     if [ "$(uname -m)" = "arm64" ]; then
-        warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwa
+        warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwareupdate -
