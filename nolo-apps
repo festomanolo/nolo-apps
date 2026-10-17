@@ -266,4 +266,5 @@ uninstall_all() {
             case "$p" in
                 /Applications/*) run sudo rm -rf "$p" ;;
                 *)               run rm -rf "$p" ;;
-        
+            esac
+  
