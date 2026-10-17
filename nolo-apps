@@ -418,4 +418,4 @@ while [ $# -gt 0 ]; do
         --install-all) ACTION=all ;;
         --install-cli) ACTION=cli ;;
         --install-ide) ACTION=ide ;;
-        --un
+        --uninstall)   
