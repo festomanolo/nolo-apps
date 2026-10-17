@@ -395,4 +395,4 @@ menu_loop() {
                 "[A") selected=$(( (selected - 1 + n) % n )) ;;
                 "[B") selected=$(( (selected + 1) % n )) ;;
             esac
-      
+            conti
