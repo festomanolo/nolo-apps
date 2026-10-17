@@ -88,4 +88,4 @@ ide_path() {
 }
 
 bin_targets() {
-    printf '%s\n' "$H
+    printf '%s\n' "$HOME/.local/
