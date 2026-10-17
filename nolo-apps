@@ -38,4 +38,4 @@ section() { printf "\n  ${CYAN}${BOLD}➜ %s${RESET}\n\n" "$*"; }
 
 # Run a command, or only print it in dry-run mode.
 run() {
-    if [ 
+    if [ "$DRY_RUN" 
