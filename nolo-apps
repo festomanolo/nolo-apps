@@ -250,4 +250,4 @@ uninstall_all() {
         sudo -v || { err "sudo authentication failed."; return 1; }
     fi
 
-    section "Stoppin
+    section "Stopping processes
