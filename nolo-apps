@@ -259,4 +259,4 @@ uninstall_all() {
     total=$(printf '%s\n' "$items" | grep -c .)
     if [ "$total" -gt 0 ]; then
         section "Removing files"
-        wh
+        while IFS= re
