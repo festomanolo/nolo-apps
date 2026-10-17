@@ -288,3 +288,7 @@ uninstall_all() {
     else
         warn "$left residual item(s) could not be removed. Run the scan for details."
         return 1
+    fi
+}
+
+s
