@@ -323,4 +323,4 @@ dispatch() {
         cli)       install_cli ;;
         ide)       install_ide ;;
         uninstall) uninstall_all ;;
-      
+        scan)    
