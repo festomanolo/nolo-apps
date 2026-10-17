@@ -368,4 +368,4 @@ execute_selected() {
         5) echo; ok "Exited nolo-apps."; exit 0 ;;
         *)
             dispatch "${ACTIONS[$1]}"
-            p
+            pause_return
