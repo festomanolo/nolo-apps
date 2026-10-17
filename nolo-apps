@@ -91,4 +91,5 @@ bin_targets() {
     printf '%s\n' "$HOME/.local/bin/agy" "$HOME/.local/bin/agy-ide" "$HOME/.local/bin/antigravity-ide"
 }
 
-dotfile_targe
+dotfile_targets() {
+    
