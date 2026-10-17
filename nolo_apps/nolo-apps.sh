@@ -39,8 +39,8 @@ trap 'show_cursor' EXIT
 log()     { printf "  %b\n" "$*"; }
 ok()      { printf "  ${GREEN}+ %s${RESET}\n" "$*"; }
 warn()    { printf "  ${YELLOW}! %s${RESET}\n" "$*"; }
-err()     { printf "  ${RED}✖ %s${RESET}\n" "$*" >&2; }
-section() { printf "\n  ${CYAN}${BOLD}➜ %s${RESET}\n\n" "$*"; }
+err()     { printf "  ${RED}x %s${RESET}\n" "$*" >&2; }
+section() { printf "\n  ${CYAN}${BOLD}>> %s${RESET}\n\n" "$*"; }
 
 # Run a command, or only print it in dry-run mode.
 run() {
