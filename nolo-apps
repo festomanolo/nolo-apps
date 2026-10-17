@@ -226,3 +226,5 @@ install_ide() {
 
     if [ "$rc" -eq 0 ]; then ok "Antigravity IDE installed to /Applications."; else err "Copy failed."; return 1; fi
 }
+
+uninstall_
