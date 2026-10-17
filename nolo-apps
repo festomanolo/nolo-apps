@@ -399,4 +399,4 @@ menu_loop() {
         fi
 
         case "$key" in
-    
+            [1-
