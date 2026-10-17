@@ -81,4 +81,4 @@ cli_path() {
 
 ide_path() {
     local p
-    for p in "/Applications/$IDE_APP" "/Applications/Antigravity.app" "$HOME/Applications
+    for p in "/Applications/$IDE_APP" "/Applications/Antigravity.app" "$HOME/Applications/$IDE_APP";
