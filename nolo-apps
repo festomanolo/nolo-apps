@@ -331,4 +331,6 @@ usage() {
     cat << EOF
 nolo-apps v$VERSION: Antigravity install / uninstall / residual manager
 
-Usage: nolo-apps [options] [actio
+Usage: nolo-apps [options] [action]
+
+Actions
