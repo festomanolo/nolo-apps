@@ -34,4 +34,4 @@ log()     { printf "  %b\n" "$*"; }
 ok()      { printf "  ${GREEN}✔ %s${RESET}\n" "$*"; }
 warn()    { printf "  ${YELLOW}⚠ %s${RESET}\n" "$*"; }
 err()     { printf "  ${RED}✖ %s${RESET}\n" "$*" >&2; }
-secti
+section() { prin
