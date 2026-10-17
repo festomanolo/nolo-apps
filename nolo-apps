@@ -204,4 +204,4 @@ install_ide() {
         err "Download failed."; rm -rf "$dir"; return 1
     fi
 
-    progress_bar 1 4 "Mo
+    progress_bar 1 4 "Mounting dis
