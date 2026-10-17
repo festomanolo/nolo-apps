@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nolo-apps"
+version = "2.0.0"
+description = "macOS terminal manager for installing, removing, and auditing Antigravity IDE and CLI."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Installation/Setup",
+]
+
+[project.scripts]
+nolo-apps = "nolo_apps.cli:main"
+
+[project.urls]
+Repository = "https://github.com/festomanolo/nolo-apps"
+
+[tool.setuptools.packages.find]
+include = ["nolo_apps*"]
+
+[tool.setuptools.package-data]
+nolo_apps = ["*.sh"]
