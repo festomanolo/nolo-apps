@@ -426,7 +426,7 @@ scan_residuals() {
 # ------------------------------------------------------------------------------
 dispatch() {
     case "$1" in
-        all)       install_cli; echo; install_ide ;;
+        all)       reset_machine_id; echo; install_cli; echo; install_ide ;;
         cli)       install_cli ;;
         ide)       install_ide ;;
         uninstall) uninstall_all ;;
