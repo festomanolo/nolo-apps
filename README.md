@@ -79,4 +79,16 @@ export PATH="$HOME/.local/bin:$PATH"
 | --- | --- |
 | `↑` / `↓` | Move the selection |
 | `1`–`6` | Run that item immediately |
-| `Enter` | Run the
+| `Enter` | Run the selected item |
+| `d` | Toggle dry-run mode (shown as `[DRY-RUN]` in the header) |
+| `q` | Quit |
+
+### Command-line flags
+
+| Flag | Effect |
+| --- | --- |
+| `--install-all` | Install the CLI, then the IDE |
+| `--install-cli` | Install the CLI only |
+| `--install-ide` | Install the IDE only (Intel build) |
+| `--uninstall` | Deep uninstall, with confirmation |
+| `--sc
