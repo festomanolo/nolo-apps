@@ -344,4 +344,8 @@ Options:
   --dry-run          Print what would run, change nothing
   -y, --yes          Skip confirmation prompts
   -h, --help         Show this help
-  --version          Show versi
+  --version          Show version
+EOF
+}
+
+#
