@@ -218,4 +218,4 @@ install_ide() {
     sudo rm -rf "/Applications/$IDE_APP" && sudo cp -R "$src" /Applications/ || rc=1
 
     progress_bar 3 4 "Clearing Gatekeeper quarantine..."
-    [ "
+    [ "$rc" -eq 0 
