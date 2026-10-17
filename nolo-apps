@@ -359,4 +359,4 @@ OPTIONS=(
     "🔍 Scan Residuals         (read-only)"
     "❌ Exit nolo-apps"
 )
-ACTIONS=(all cli ide uninstall 
+ACTIONS=(all cli ide uninstall scan exit)
