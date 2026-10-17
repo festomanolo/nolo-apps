@@ -168,4 +168,5 @@ install_cli() {
     # Download first, then execute: a failed download never runs partial code.
     local tmp
     tmp=$(mktemp -t nolo-agy) || return 1
-    if ! curl -fsSL "$CLI_URL" -o "$tmp";
+    if ! curl -fsSL "$CLI_URL" -o "$tmp"; then
+     
