@@ -429,6 +429,7 @@ dispatch() {
         all)       reset_machine_id; echo; install_cli; echo; install_ide ;;
         cli)       install_cli ;;
         ide)       install_ide ;;
+        reset)     reset_machine_id ;;
         uninstall) uninstall_all ;;
         scan)      scan_residuals ;;
     esac
