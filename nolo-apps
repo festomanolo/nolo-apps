@@ -383,4 +383,4 @@ menu_loop() {
             num=$((i + 1))
             if [ "$i" -eq "$selected" ]; then
                 printf "  ${BG_SELECT}${CYAN} ❯ [%s] ${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
- 
+            
