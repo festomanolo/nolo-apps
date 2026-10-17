@@ -174,4 +174,4 @@ install_cli() {
     fi
     bash "$tmp"; local rc=$?
     rm -f "$tmp"
-    if [ "$rc" -eq 0 ]; then ok "Antigravity CLI installed."; else err "CLI
+    if [ "$rc" -eq 0 ]; then ok "Antigravity CLI installed."; else err "CLI installer 
