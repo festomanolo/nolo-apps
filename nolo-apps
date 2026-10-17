@@ -119,4 +119,4 @@ found_items() {
 kind_of() {
     case "$1" in
         /Applications/*|"$HOME"/Applications/*) echo "APP" ;;
-        */.local/bin/*)                         e
+        */.local/bin/*)                         echo "BINARY
