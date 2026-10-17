@@ -353,4 +353,4 @@ EOF
 # ------------------------------------------------------------------------------
 OPTIONS=(
     "🚀 Install Everything     (CLI + Intel IDE)"
-    "⚡ Install C
+    "⚡ Install CLI Only    
