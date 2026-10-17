@@ -148,4 +148,5 @@ draw_header() {
     printf "  Residuals  : %b\n\n" "$count"
 }
 
-pause_return() 
+pause_return() {
+    echo
