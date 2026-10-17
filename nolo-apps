@@ -388,4 +388,4 @@ menu_loop() {
             fi
         done
 
-        IFS= read
+        IFS= read -rsn1 key
