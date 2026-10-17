@@ -59,3 +59,4 @@ progress_bar() {
     local current=$1 total=$2 label=$3 width=32
     local filled=$(( current * width / total ))
     local empty=$(( width - filled ))
+    local
