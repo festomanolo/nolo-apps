@@ -431,3 +431,5 @@ if [ -n "$ACTION" ]; then
     dispatch "$ACTION"
     exit $?
 fi
+
+menu_loop
