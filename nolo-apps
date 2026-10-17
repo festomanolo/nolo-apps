@@ -271,4 +271,5 @@ uninstall_all() {
     fi
 
     if zshrc_hits; then
-        section "Cleaning ~/.z
+        section "Cleaning ~/.zshrc"
+     
