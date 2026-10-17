@@ -100,4 +100,5 @@ library_matches() {
     find "$HOME/Library" -maxdepth 3 -iname "*antigravity*" 2>/dev/null
 }
 
-zshrc
+zshrc_hits() {
+ 
