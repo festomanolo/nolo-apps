@@ -241,4 +241,4 @@ uninstall_all() {
     printf '%s\n' "$items" | while IFS= read -r p; do
         [ -n "$p" ] && printf "    ${YELLOW}%-8s${RESET} %s\n" "$(kind_of "$p")" "$p"
     done
-    zshrc_hits && printf "    ${YELLOW}%-8s${RESET} Antigravity/agy PATH & alias lines in ~/.z
+    zshrc_hits && printf "    ${YELLOW}%-8s${RESET} Antigravity/agy PATH & alias lines in ~/.zshrc (backu
