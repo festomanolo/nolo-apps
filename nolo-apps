@@ -65,4 +65,7 @@ progress_bar() {
     printf "\r  ${PURPLE}[${CYAN}%s${PURPLE}]${RESET} ${BOLD}%3d%%${RESET} %-44s" \
         "$bar" $(( current * 100 / total )) "$label"
     [ "$current" -eq "$total" ] && echo
-    re
+    return 0
+}
+
+#
