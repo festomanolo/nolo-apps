@@ -335,4 +335,4 @@ Usage: nolo-apps [options] [action]
 
 Actions (omit for interactive menu):
   --install-all      Install CLI and IDE
-  --install-cli      Insta
+  --install-cli      Install CLI only
