@@ -96,4 +96,4 @@ dotfile_targets() {
         "$HOME/.gemini/antigravity-cli" "$HOME/.gemini/antigravity"
 }
 
-li
+library_match
