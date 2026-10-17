@@ -150,4 +150,4 @@ draw_header() {
 
 pause_return() {
     echo
-    printf "  ${DIM}P
+    printf "  ${DIM}Press any ke
