@@ -107,4 +107,4 @@ zshrc_hits() {
 # Every existing residual path, one per line.
 found_items() {
     {
-   
+        ide_pa
