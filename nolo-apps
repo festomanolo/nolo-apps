@@ -178,4 +178,4 @@ install_cli() {
 }
 
 install_ide() {
-    section "Installing Antigravity 
+    section "Installing Antigravity IDE (Intel
