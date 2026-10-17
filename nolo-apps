@@ -296,4 +296,4 @@ scan_residuals() {
     local found=0 p
     while IFS= read -r p; do
         [ -z "$p" ] && continue
-    
+        printf 
