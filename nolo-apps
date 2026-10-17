@@ -81,4 +81,4 @@ cli_path() {
 
 ide_path() {
     local p
-    for p in "
+    for p in "/Applicati
