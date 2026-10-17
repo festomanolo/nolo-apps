@@ -365,4 +365,4 @@ execute_selected() {
     show_cursor
     draw_header
     case "$1" in
-        5) echo; ok "Exited nolo-apps
+        5) echo; ok "Exited nolo-apps."; exit 0 
