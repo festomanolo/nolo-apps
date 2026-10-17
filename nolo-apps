@@ -167,4 +167,4 @@ install_cli() {
     fi
     # Download first, then execute: a failed download never runs partial code.
     local tmp
-    tmp
+    tmp=$(mktemp -
