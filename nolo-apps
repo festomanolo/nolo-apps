@@ -55,4 +55,5 @@ confirm() {
 }
 
 # progress_bar <current> <total> <label>
-progress_
+progress_bar() {
+  
