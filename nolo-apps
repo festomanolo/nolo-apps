@@ -247,4 +247,4 @@ uninstall_all() {
     confirm "Proceed with deep uninstall?" || { warn "Cancelled. Nothing was removed."; return 1; }
 
     if [ "$DRY_RUN" -eq 0 ]; then
-        sudo -v || { err "sudo authentication failed.
+        sudo -v || { err "sudo authentication failed."; return 
