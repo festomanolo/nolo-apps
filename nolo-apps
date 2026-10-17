@@ -270,4 +270,4 @@ uninstall_all() {
         done <<< "$items"
     fi
 
-    if zshr
+    if zshrc_hits; the
