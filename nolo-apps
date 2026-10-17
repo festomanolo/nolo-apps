@@ -113,3 +113,4 @@ found_items() {
         library_matches
     } | while IFS= read -r p; do
         [ -n "$p" ] && [ -e "$p" ] && echo "$p"
+    done |
