@@ -75,4 +75,4 @@ cli_path() {
     if [ -x "$HOME/.local/bin/agy" ]; then
         echo "$HOME/.local/bin/agy"
     else
-        
+        command -v
