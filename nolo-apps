@@ -228,4 +228,5 @@ install_ide() {
 }
 
 uninstall_all() {
-    section "Deep uninstall: Antigravity IDE, CLI and res
+    section "Deep uninstall: Antigravity IDE, CLI and residuals"
+   
