@@ -42,4 +42,23 @@ chmod +x nolo-apps
 ./nolo-apps
 ```
 
-Optio
+Optional: put it on your `PATH` for use from anywhere:
+
+```bash
+mkdir -p ~/.local/bin
+cp nolo-apps ~/.local/bin/nolo-apps
+```
+
+If `~/.local/bin` is not on your `PATH`, add this line to `~/.zshrc`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+## Usage
+
+### Interactive menu
+
+```
+  ⚡ NOLO-APPS v2.0.0 — macOS App & Residual Manager
+  ──────────�
