@@ -254,4 +254,6 @@ uninstall_all() {
     run pkill -f "/Applications/Antigravity IDE.app/" 2>/dev/null
     run pkill -f "/Applications/Antigravity.app/" 2>/dev/null
     run pkill -x agy 2>/dev/null
-    [ "$DRY_RUN" -eq 0 ] && slee
+    [ "$DRY_RUN" -eq 0 ] && sleep 0.5
+
+    
