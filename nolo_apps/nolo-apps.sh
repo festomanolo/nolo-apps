@@ -490,7 +490,7 @@ menu_loop() {
         for i in "${!OPTIONS[@]}"; do
             num=$((i + 1))
             if [ "$i" -eq "$selected" ]; then
-                printf "  ${BG_SELECT}${CYAN} ❯ [%s] ${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
+                printf "  ${BG_SELECT}${CYAN} > [%s]${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
             else
                 printf "     ${GRAY}[%s]${RESET} %s\n" "$num" "${OPTIONS[$i]}"
             fi
