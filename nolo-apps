@@ -50,4 +50,4 @@ confirm() {
     [ "$ASSUME_YES" -eq 1 ] && return 0
     local ans
     printf "  ${YELLOW}%s [y/N] ${RESET}" "$1"
-   
+    IFS= read 
