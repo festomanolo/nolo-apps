@@ -278,4 +278,4 @@ uninstall_all() {
     fi
 
     if [ "$DRY_RUN" -eq 1 ]; then
-        ok "Dry run com
+        ok "Dry run complete. No 
