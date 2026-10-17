@@ -291,4 +291,5 @@ uninstall_all() {
     fi
 }
 
-scan_residua
+scan_residuals() {
+   
