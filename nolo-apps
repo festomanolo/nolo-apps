@@ -374,4 +374,4 @@ execute_selected() {
 }
 
 menu_loop() {
-    local se
+    local selected=0 ke
