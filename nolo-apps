@@ -415,4 +415,4 @@ while [ $# -gt 0 ]; do
     case "$1" in
         --dry-run)     DRY_RUN=1 ;;
         -y|--yes)      ASSUME_YES=1 ;;
-        --inst
+        --install-all) AC
