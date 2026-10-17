@@ -68,4 +68,15 @@ export PATH="$HOME/.local/bin:$PATH"
   Residuals  : 0 (clean)
 
   ❯ [1] 🚀 Install Everything     (CLI + Intel IDE)
-     [2] ⚡ Install CLI Onl
+     [2] ⚡ Install CLI Only       (official install script)
+     [3] 💻 Install IDE Only       (Intel DMG)
+     [4] 🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)
+     [5] 🔍 Scan Residuals         (read-only)
+     [6] ❌ Exit nolo-apps
+```
+
+| Key | Action |
+| --- | --- |
+| `↑` / `↓` | Move the selection |
+| `1`–`6` | Run that item immediately |
+| `Enter` | Run the
