@@ -342,4 +342,4 @@ Actions (omit for interactive menu):
 
 Options:
   --dry-run          Print what would run, change nothing
-  -y, --yes     
+  -y, --yes          Skip c
