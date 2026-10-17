@@ -391,4 +391,5 @@ menu_loop() {
         IFS= read -rsn1 key
         if [[ "$key" == $'\x1b' ]]; then
             IFS= read -rsn2 rest
-            case "$rest"
+            case "$rest" in
+      
