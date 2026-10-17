@@ -136,4 +136,4 @@ draw_header() {
     if ide_path >/dev/null; then ide="${GREEN}● INSTALLED${RESET} ${DIM}$(ide_path)${RESET}"
     else ide="${GRAY}○ NOT FOUND${RESET}"; fi
     count=$(found_items | wc -l | tr -d ' ')
-    if [ "$count" -gt 0 ];
+    if [ "$count" -gt 0 ]; then count
