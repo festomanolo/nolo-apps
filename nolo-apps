@@ -320,4 +320,4 @@ scan_residuals() {
 dispatch() {
     case "$1" in
         all)       install_cli; echo; install_ide ;;
-        cli) 
+        cli)       insta
