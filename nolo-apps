@@ -193,4 +193,5 @@ install_ide() {
     sudo -v || { err "sudo authentication failed."; return 1; }
 
     local dir dmg mnt src rc=0
-    dir=$(mktemp -d -t nolo-apps) || 
+    dir=$(mktemp -d -t nolo-apps) || return 1
+  
