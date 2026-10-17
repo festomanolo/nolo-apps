@@ -20,6 +20,7 @@ CURSOR_MACHINE_ID_FILE="$HOME/Library/Application Support/Cursor/machineId"
 
 DRY_RUN=0
 ASSUME_YES=0
+_RESET_DONE=0   # prevents double-reset when install-all runs both functions
 
 # ANSI styling
 BOLD="\033[1m"; DIM="\033[2m"; RESET="\033[0m"
