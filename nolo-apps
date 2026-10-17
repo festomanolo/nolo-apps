@@ -297,4 +297,4 @@ scan_residuals() {
     while IFS= read -r p; do
         [ -z "$p" ] && continue
         printf "  ${YELLOW}%-8s${RESET} %s ${DIM}(%s)${RESET}\n" \
-            "$(kind_of "$p")" "$p" "$(du -sh "
+            "$(kind_of "$p")" "$p" "$(du -sh "$p" 2>/dev/
