@@ -144,4 +144,5 @@ draw_header() {
     printf "  ${PURPLE}─────────────────────────────────────────────────────────────${RESET}\n"
     printf "  Arch       : %s\n" "$(uname -m)"
     printf "  CLI        : %b\n" "$cli"
-    printf "  IDE        : %b\n" "$id
+    printf "  IDE        : %b\n" "$ide"
+    prin
