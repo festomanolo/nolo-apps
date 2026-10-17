@@ -133,4 +133,4 @@ draw_header() {
     local cli ide count badge=""
     if [ -n "$(cli_path)" ]; then cli="${GREEN}● INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
     else cli="${GRAY}○ NOT FOUND${RESET}"; fi
-    if i
+    if ide_path >/d
