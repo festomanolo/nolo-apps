@@ -336,4 +336,5 @@ Usage: nolo-apps [options] [action]
 Actions (omit for interactive menu):
   --install-all      Install CLI and IDE
   --install-cli      Install CLI only
-  --install-ide      Install IDE
+  --install-ide      Install IDE only
+  --
