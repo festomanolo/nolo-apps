@@ -224,4 +224,4 @@ install_ide() {
     hdiutil detach "$mnt" -quiet 2>/dev/null
     rm -rf "$dir"
 
-    if [ "$
+    if [ "$rc" -eq 0 
