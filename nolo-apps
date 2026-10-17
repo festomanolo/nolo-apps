@@ -282,4 +282,4 @@ uninstall_all() {
         return 0
     fi
 
-    left=$(found_items | g
+    left=$(found_items | grep -c .)
