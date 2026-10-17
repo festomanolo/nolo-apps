@@ -237,4 +237,5 @@ uninstall_all() {
         return 0
     fi
 
-    log "${BOLD}The following will be removed:${RE
+    log "${BOLD}The following will be removed:${RESET}"
+    
