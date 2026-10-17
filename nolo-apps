@@ -291,4 +291,4 @@ uninstall_all() {
     fi
 }
 
-s
+scan_residua
