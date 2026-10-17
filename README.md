@@ -122,4 +122,10 @@ Examples:
 | `LIBRARY` | Any `*antigravity*` entry within three levels of `~/Library` |
 | `ZSHRC` | Lines in `~/.zshrc` that set `PATH` or an `agy` alias and mention Antigravity or `agy` |
 
-Before editing `~/.zshr
+Before editing `~/.zshrc`, the script copies it to `~/.zshrc.nolo-bak`.
+
+## Safety model
+
+1. **Preview first.** Scan and dry-run show what would change without changing it.
+2. **Confirm before delete.** Uninstall lists every target and waits for `y`.
+3. **Narrow matches.** Shell-config edits are limited to Antigravity PATH and alias lines. Process kills match the exact app bundle path or 
