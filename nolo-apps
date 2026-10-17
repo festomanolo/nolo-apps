@@ -302,4 +302,4 @@ scan_residuals() {
     done < <(found_items)
 
     if zshrc_hits; then
-        printf "  ${YELLOW}%-8s${RESET} Antigravity/agy PATH or a
+        printf "  ${YELLOW}%-8s${RESET} Antigravity/agy PATH or alias lines 
