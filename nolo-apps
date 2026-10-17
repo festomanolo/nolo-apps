@@ -193,4 +193,4 @@ install_ide() {
     sudo -v || { err "sudo authentication failed."; return 1; }
 
     local dir dmg mnt src rc=0
-    dir=$(mktem
+    dir=$(mktemp -d -t nol
