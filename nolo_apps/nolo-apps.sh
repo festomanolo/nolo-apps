@@ -461,8 +461,8 @@ EOF
 OPTIONS=(
     "  Install Everything      CLI + Intel IDE"
     "  Install CLI Only        official install script"
-    "💻 Install IDE Only       (Intel DMG)"
-    "🔄 Reset Cursor Machine ID (standalone)"
+    "  Install IDE Only        Intel DMG"
+    "  Reset Cursor Machine ID standalone"
     "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
     "🔍 Scan Residuals         (read-only)"
     "❌ Exit nolo-apps"
