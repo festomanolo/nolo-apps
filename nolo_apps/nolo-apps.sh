@@ -509,7 +509,7 @@ menu_loop() {
         fi
 
         case "$key" in
-            [1-6]) execute_selected $(( key - 1 )) ;;
+            [1-7]) execute_selected $(( key - 1 )) ;;
             "")    execute_selected "$selected" ;;
             d|D)   DRY_RUN=$(( 1 - DRY_RUN )) ;;
             q|Q)   show_cursor; echo; ok "Goodbye!"; exit 0 ;;
