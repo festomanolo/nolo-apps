@@ -165,4 +165,4 @@ install_cli() {
         log "${DIM}[dry-run] download $CLI_URL, then run it${RESET}"
         return 0
     fi
-    # Download
+    # Download first, th
