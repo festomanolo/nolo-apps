@@ -282,4 +282,4 @@ uninstall_all() {
         return 0
     fi
 
-    left=$(foun
+    left=$(found_items | g
