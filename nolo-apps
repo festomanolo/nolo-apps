@@ -375,4 +375,5 @@ execute_selected() {
 
 menu_loop() {
     local selected=0 key rest n=${#OPTIONS[@]} i num
-    while true
+    while true; do
+     
