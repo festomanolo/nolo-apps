@@ -392,4 +392,4 @@ menu_loop() {
         if [[ "$key" == $'\x1b' ]]; then
             IFS= read -rsn2 rest
             case "$rest" in
-                "
+                "[A") select
