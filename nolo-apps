@@ -115,3 +115,5 @@ found_items() {
         [ -n "$p" ] && [ -e "$p" ] && echo "$p"
     done | sort -u
 }
+
+kind_of() 
