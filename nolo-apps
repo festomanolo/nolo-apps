@@ -92,4 +92,4 @@ bin_targets() {
 }
 
 dotfile_targets() {
-    printf '%s\n' "$HOME/.antigravity" "$HOME/.antigravity-ide" "$HOM
+    printf '%s\n' "$HOME/.antigravity" "$HOME/.antigravity-ide" "$HOME/.antigrav
