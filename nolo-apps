@@ -183,4 +183,4 @@ install_ide() {
         warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwareupdate --install-rosetta --agree-to-license)."
     fi
     if ide_path >/dev/null; then
-        confirm "Antigravity I
+        confirm "Antigravity IDE is alrea
