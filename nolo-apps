@@ -118,4 +118,4 @@ found_items() {
 
 kind_of() {
     case "$1" in
-        /Applications/*|"$HOME"/App
+        /Applications/*|"$HOME"/Applications/*
