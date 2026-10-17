@@ -16,4 +16,7 @@ Installing and fully removing a macOS app plus its CLI usually means hunting thr
 
 ## Features
 
-- **Interactive TUI.** Arr
+- **Interactive TUI.** Arrow keys, number keys `1`–`6`, or `q` to quit.
+- **Live status header.** Shows CPU architecture, where the CLI and IDE are installed, and how many residual items remain.
+- **Install** the Antigravity CLI, the Intel IDE, or both, with a progress bar.
+- **Deep uninstall.** Removes the app, CLI binaries, dotfiles, `~/Library` leftovers, and Antigravity PATH/alias line
