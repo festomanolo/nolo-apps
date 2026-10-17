@@ -239,4 +239,4 @@ uninstall_all() {
 
     log "${BOLD}The following will be removed:${RESET}"
     printf '%s\n' "$items" | while IFS= read -r p; do
-        [ -n "$p" ] && printf "    ${
+        [ -n "$p" ] && printf "    ${YELLOW}%-8s
