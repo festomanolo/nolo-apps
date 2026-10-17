@@ -131,3 +131,4 @@ kind_of() {
 draw_header() {
     clear
     local cli ide count badge=""
+    if [ -n
