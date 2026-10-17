@@ -47,4 +47,4 @@ run() {
 
 # Yes/no prompt. -y skips it.
 confirm() {
-    [ "$ASSUME_YE
+    [ "$ASSUME_YES" -eq 1 ] 
