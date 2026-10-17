@@ -442,11 +442,12 @@ nolo-apps v$VERSION: Antigravity install / uninstall / residual manager
 Usage: nolo-apps [options] [action]
 
 Actions (omit for interactive menu):
-  --install-all      Install CLI and IDE
-  --install-cli      Install CLI only
-  --install-ide      Install IDE only
-  --uninstall        Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
-  --scan             Scan for residuals, no changes
+  --install-all         Install CLI and IDE (resets Cursor machine ID first)
+  --install-cli         Install CLI only    (resets Cursor machine ID first)
+  --install-ide         Install IDE only    (resets Cursor machine ID first)
+  --reset-machine-id    Reset Cursor machine ID only (no install)
+  --uninstall           Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
+  --scan                Scan for residuals, no changes
 
 Options:
   --dry-run          Print what would run, change nothing
