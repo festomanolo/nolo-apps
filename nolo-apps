@@ -101,4 +101,4 @@ library_matches() {
 }
 
 zshrc_hits() {
-    [ -f "$H
+    [ -f "$HOME/.zshrc"
