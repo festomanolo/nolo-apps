@@ -234,3 +234,4 @@ uninstall_all() {
 
     if [ -z "$items" ] && ! zshrc_hits; then
         ok "Nothing to remove."
+        re
