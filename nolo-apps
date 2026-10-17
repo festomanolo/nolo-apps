@@ -352,4 +352,5 @@ EOF
 # Interactive menu
 # ------------------------------------------------------------------------------
 OPTIONS=(
-    "🚀 Install Everything     (CLI + Intel ID
+    "🚀 Install Everything     (CLI + Intel IDE)"
+    "�
