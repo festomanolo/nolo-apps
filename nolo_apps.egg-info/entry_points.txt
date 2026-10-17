@@ -1,0 +1,2 @@
+[console_scripts]
+nolo-apps = nolo_apps.cli:main
