@@ -301,4 +301,4 @@ scan_residuals() {
         found=$((found + 1))
     done < <(found_items)
 
-    if zshrc_
+    if zshrc_hits; then
