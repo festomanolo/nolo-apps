@@ -153,4 +153,7 @@ pause_return() {
     printf "  ${DIM}Press any key to return to the menu...${RESET}"
     show_cursor
     IFS= read -rsn1 _
-  
+    echo
+}
+
+#
