@@ -199,4 +199,4 @@ install_ide() {
     src="$mnt/$IDE_APP"
     mkdir "$mnt"
 
-    log
+    log "${DIM}Sou
