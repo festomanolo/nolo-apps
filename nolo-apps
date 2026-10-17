@@ -81,4 +81,4 @@ cli_path() {
 
 ide_path() {
     local p
-    for p in "/Applicati
+    for p in "/Applications/$IDE_AP
