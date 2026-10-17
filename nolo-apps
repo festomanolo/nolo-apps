@@ -222,4 +222,5 @@ install_ide() {
 
     progress_bar 4 4 "Detaching and cleaning up..."
     hdiutil detach "$mnt" -quiet 2>/dev/null
-    rm -
+    rm -rf "$dir"
+
