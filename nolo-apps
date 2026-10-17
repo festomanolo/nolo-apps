@@ -199,4 +199,4 @@ install_ide() {
     src="$mnt/$IDE_APP"
     mkdir "$mnt"
 
-    log "${DIM}Source: Google
+    log "${DIM}Source: Google Edge DL (v
