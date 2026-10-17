@@ -117,4 +117,9 @@ Examples:
 | Type | Paths |
 | --- | --- |
 | `APP` | `/Applications/Antigravity IDE.app`, `/Applications/Antigravity.app`, `~/Applications/Antigravity IDE.app` |
-| `BINARY` | `~/.local/bin/agy`, `~/.local/bin/agy-ide`,
+| `BINARY` | `~/.local/bin/agy`, `~/.local/bin/agy-ide`, `~/.local/bin/antigravity-ide` |
+| `DOTFILE` | `~/.antigravity`, `~/.antigravity-ide`, `~/.antigravity_tools`, `~/.gemini/antigravity`, `~/.gemini/antigravity-cli` |
+| `LIBRARY` | Any `*antigravity*` entry within three levels of `~/Library` |
+| `ZSHRC` | Lines in `~/.zshrc` that set `PATH` or an `agy` alias and mention Antigravity or `agy` |
+
+Before editing `~/.zshr
