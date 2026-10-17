@@ -150,4 +150,4 @@ draw_header() {
 
 pause_return() {
     echo
-    printf "  ${DIM}Press any ke
+    printf "  ${DIM}Press any key to return
