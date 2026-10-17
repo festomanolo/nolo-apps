@@ -417,4 +417,5 @@ while [ $# -gt 0 ]; do
         -y|--yes)      ASSUME_YES=1 ;;
         --install-all) ACTION=all ;;
         --install-cli) ACTION=cli ;;
-        --install-ide) ACTI
+        --install-ide) ACTION=ide ;;
+ 
