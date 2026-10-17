@@ -145,4 +145,4 @@ draw_header() {
     printf "  Arch       : %s\n" "$(uname -m)"
     printf "  CLI        : %b\n" "$cli"
     printf "  IDE        : %b\n" "$ide"
-    printf "  Resi
+    printf "  Residuals  : %b
