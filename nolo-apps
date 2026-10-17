@@ -263,4 +263,5 @@ uninstall_all() {
             [ -z "$p" ] && continue
             i=$((i + 1))
             progress_bar "$i" "$total" "Removing $(basename "$p")"
-            case "$p" 
+            case "$p" in
+        
