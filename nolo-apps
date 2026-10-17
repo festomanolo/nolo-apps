@@ -17,4 +17,4 @@ DRY_RUN=0
 ASSUME_YES=0
 
 # ANSI styling
-BOLD="\033[1m"; DIM="\033[2m"; RESET
+BOLD="\033[1m"; DIM="\033[2m"; RESET="\033[0m"
