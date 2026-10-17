@@ -163,6 +163,105 @@ pause_return() {
 }
 
 # ------------------------------------------------------------------------------
+# Reset Cursor machine ID (runs automatically before installs)
+# Mirrors the logic from cursor-free-vip reset_machine_manual.py.
+# Generates fresh UUIDs / SHA hashes and writes them to Cursor's storage.
+# ------------------------------------------------------------------------------
+reset_machine_id() {
+    section "Resetting Cursor Machine ID"
+    _RESET_DONE=1
+
+    # Generate fresh IDs using Python (available on every macOS)
+    local dev_device_id machine_id mac_machine_id sqm_id
+    dev_device_id=$(python3 -c "import uuid; print(uuid.uuid4())")
+    machine_id=$(python3 -c "import hashlib,os; print(hashlib.sha256(os.urandom(32)).hexdigest())")
+    mac_machine_id=$(python3 -c "import hashlib,os; print(hashlib.sha512(os.urandom(64)).hexdigest())")
+    sqm_id=$(python3 -c "import uuid; print('{' + str(uuid.uuid4()).upper() + '}')")
+
+    # ---- machineId flat file ------------------------------------------------
+    local mid_dir
+    mid_dir=$(dirname "$CURSOR_MACHINE_ID_FILE")
+    if [ ! -d "$mid_dir" ]; then
+        mkdir -p "$mid_dir"
+    fi
+    if [ "$DRY_RUN" -eq 1 ]; then
+        log "${DIM}[dry-run] write $dev_device_id → $CURSOR_MACHINE_ID_FILE${RESET}"
+    else
+        if [ -f "$CURSOR_MACHINE_ID_FILE" ]; then
+            cp "$CURSOR_MACHINE_ID_FILE" "${CURSOR_MACHINE_ID_FILE}.bak.$(date +%Y%m%d_%H%M%S)"
+        fi
+        printf '%s' "$dev_device_id" > "$CURSOR_MACHINE_ID_FILE"
+        ok "machineId file updated."
+    fi
+
+    # ---- storage.json -------------------------------------------------------
+    local storage_dir
+    storage_dir=$(dirname "$CURSOR_STORAGE")
+    if [ -f "$CURSOR_STORAGE" ]; then
+        if [ "$DRY_RUN" -eq 0 ]; then
+            cp "$CURSOR_STORAGE" "${CURSOR_STORAGE}.bak.$(date +%Y%m%d_%H%M%S)"
+        fi
+        if [ "$DRY_RUN" -eq 1 ]; then
+            log "${DIM}[dry-run] patch $CURSOR_STORAGE with new IDs${RESET}"
+        else
+            python3 - "$CURSOR_STORAGE" "$dev_device_id" "$machine_id" "$mac_machine_id" "$sqm_id" <<'PYEOF'
+import sys, json
+path, dev_id, mid, mmid, sqm = sys.argv[1:]
+with open(path, "r", encoding="utf-8") as f:
+    data = json.load(f)
+data.update({
+    "telemetry.devDeviceId": dev_id,
+    "telemetry.macMachineId": mmid,
+    "telemetry.machineId": mid,
+    "telemetry.sqmId": sqm,
+    "storage.serviceMachineId": dev_id,
+})
+with open(path, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=4)
+PYEOF
+            ok "storage.json patched."
+        fi
+    else
+        warn "storage.json not found — Cursor may not be installed yet. Skipping JSON patch."
+    fi
+
+    # ---- SQLite state.vscdb -------------------------------------------------
+    if [ -f "$CURSOR_SQLITE" ]; then
+        if [ "$DRY_RUN" -eq 1 ]; then
+            log "${DIM}[dry-run] update $CURSOR_SQLITE with new IDs${RESET}"
+        else
+            python3 - "$CURSOR_SQLITE" "$dev_device_id" "$machine_id" "$mac_machine_id" "$sqm_id" <<'PYEOF'
+import sys, sqlite3
+path, dev_id, mid, mmid, sqm = sys.argv[1:]
+con = sqlite3.connect(path)
+cur = con.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS ItemTable (key TEXT PRIMARY KEY, value TEXT)")
+for k, v in [
+    ("telemetry.devDeviceId", dev_id),
+    ("telemetry.macMachineId", mmid),
+    ("telemetry.machineId", mid),
+    ("telemetry.sqmId", sqm),
+    ("storage.serviceMachineId", dev_id),
+]:
+    cur.execute("INSERT OR REPLACE INTO ItemTable (key, value) VALUES (?, ?)", (k, v))
+con.commit()
+con.close()
+PYEOF
+            ok "SQLite database updated."
+        fi
+    else
+        warn "state.vscdb not found — Cursor may not be installed yet. Skipping SQLite patch."
+    fi
+
+    [ "$DRY_RUN" -eq 0 ] && printf "\n  ${CYAN}New IDs:${RESET}\n" \
+        && printf "  devDeviceId  : ${GREEN}%s${RESET}\n" "$dev_device_id" \
+        && printf "  machineId    : ${GREEN}%s${RESET}\n" "$machine_id" \
+        && printf "  macMachineId : ${GREEN}%s${RESET}\n" "$mac_machine_id" \
+        && printf "  sqmId        : ${GREEN}%s${RESET}\n" "$sqm_id"
+    return 0
+}
+
+# ------------------------------------------------------------------------------
 # Actions
 # ------------------------------------------------------------------------------
 install_cli() {
