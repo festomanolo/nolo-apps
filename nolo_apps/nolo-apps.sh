@@ -13,8 +13,14 @@ CLI_URL="https://antigravity.google/cli/install.sh"
 IDE_APP="Antigravity IDE.app"
 ZSH_PATTERN='^[[:space:]]*(export[[:space:]]+PATH=|alias[[:space:]]+agy=).*(antigravity|agy)'
 
+# Cursor machine-ID storage paths (macOS)
+CURSOR_STORAGE="$HOME/Library/Application Support/Cursor/User/globalStorage/storage.json"
+CURSOR_SQLITE="$HOME/Library/Application Support/Cursor/User/globalStorage/state.vscdb"
+CURSOR_MACHINE_ID_FILE="$HOME/Library/Application Support/Cursor/machineId"
+
 DRY_RUN=0
 ASSUME_YES=0
+_RESET_DONE=0   # prevents double-reset when install-all runs both functions
 
 # ANSI styling
 BOLD="\033[1m"; DIM="\033[2m"; RESET="\033[0m"
@@ -157,9 +163,109 @@ pause_return() {
 }
 
 # ------------------------------------------------------------------------------
+# Reset Cursor machine ID (runs automatically before installs)
+# Mirrors the logic from cursor-free-vip reset_machine_manual.py.
+# Generates fresh UUIDs / SHA hashes and writes them to Cursor's storage.
+# ------------------------------------------------------------------------------
+reset_machine_id() {
+    section "Resetting Cursor Machine ID"
+    _RESET_DONE=1
+
+    # Generate fresh IDs using Python (available on every macOS)
+    local dev_device_id machine_id mac_machine_id sqm_id
+    dev_device_id=$(python3 -c "import uuid; print(uuid.uuid4())")
+    machine_id=$(python3 -c "import hashlib,os; print(hashlib.sha256(os.urandom(32)).hexdigest())")
+    mac_machine_id=$(python3 -c "import hashlib,os; print(hashlib.sha512(os.urandom(64)).hexdigest())")
+    sqm_id=$(python3 -c "import uuid; print('{' + str(uuid.uuid4()).upper() + '}')")
+
+    # ---- machineId flat file ------------------------------------------------
+    local mid_dir
+    mid_dir=$(dirname "$CURSOR_MACHINE_ID_FILE")
+    if [ ! -d "$mid_dir" ]; then
+        mkdir -p "$mid_dir"
+    fi
+    if [ "$DRY_RUN" -eq 1 ]; then
+        log "${DIM}[dry-run] write $dev_device_id → $CURSOR_MACHINE_ID_FILE${RESET}"
+    else
+        if [ -f "$CURSOR_MACHINE_ID_FILE" ]; then
+            cp "$CURSOR_MACHINE_ID_FILE" "${CURSOR_MACHINE_ID_FILE}.bak.$(date +%Y%m%d_%H%M%S)"
+        fi
+        printf '%s' "$dev_device_id" > "$CURSOR_MACHINE_ID_FILE"
+        ok "machineId file updated."
+    fi
+
+    # ---- storage.json -------------------------------------------------------
+    local storage_dir
+    storage_dir=$(dirname "$CURSOR_STORAGE")
+    if [ -f "$CURSOR_STORAGE" ]; then
+        if [ "$DRY_RUN" -eq 0 ]; then
+            cp "$CURSOR_STORAGE" "${CURSOR_STORAGE}.bak.$(date +%Y%m%d_%H%M%S)"
+        fi
+        if [ "$DRY_RUN" -eq 1 ]; then
+            log "${DIM}[dry-run] patch $CURSOR_STORAGE with new IDs${RESET}"
+        else
+            python3 - "$CURSOR_STORAGE" "$dev_device_id" "$machine_id" "$mac_machine_id" "$sqm_id" <<'PYEOF'
+import sys, json
+path, dev_id, mid, mmid, sqm = sys.argv[1:]
+with open(path, "r", encoding="utf-8") as f:
+    data = json.load(f)
+data.update({
+    "telemetry.devDeviceId": dev_id,
+    "telemetry.macMachineId": mmid,
+    "telemetry.machineId": mid,
+    "telemetry.sqmId": sqm,
+    "storage.serviceMachineId": dev_id,
+})
+with open(path, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=4)
+PYEOF
+            ok "storage.json patched."
+        fi
+    else
+        warn "storage.json not found — Cursor may not be installed yet. Skipping JSON patch."
+    fi
+
+    # ---- SQLite state.vscdb -------------------------------------------------
+    if [ -f "$CURSOR_SQLITE" ]; then
+        if [ "$DRY_RUN" -eq 1 ]; then
+            log "${DIM}[dry-run] update $CURSOR_SQLITE with new IDs${RESET}"
+        else
+            python3 - "$CURSOR_SQLITE" "$dev_device_id" "$machine_id" "$mac_machine_id" "$sqm_id" <<'PYEOF'
+import sys, sqlite3
+path, dev_id, mid, mmid, sqm = sys.argv[1:]
+con = sqlite3.connect(path)
+cur = con.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS ItemTable (key TEXT PRIMARY KEY, value TEXT)")
+for k, v in [
+    ("telemetry.devDeviceId", dev_id),
+    ("telemetry.macMachineId", mmid),
+    ("telemetry.machineId", mid),
+    ("telemetry.sqmId", sqm),
+    ("storage.serviceMachineId", dev_id),
+]:
+    cur.execute("INSERT OR REPLACE INTO ItemTable (key, value) VALUES (?, ?)", (k, v))
+con.commit()
+con.close()
+PYEOF
+            ok "SQLite database updated."
+        fi
+    else
+        warn "state.vscdb not found — Cursor may not be installed yet. Skipping SQLite patch."
+    fi
+
+    [ "$DRY_RUN" -eq 0 ] && printf "\n  ${CYAN}New IDs:${RESET}\n" \
+        && printf "  devDeviceId  : ${GREEN}%s${RESET}\n" "$dev_device_id" \
+        && printf "  machineId    : ${GREEN}%s${RESET}\n" "$machine_id" \
+        && printf "  macMachineId : ${GREEN}%s${RESET}\n" "$mac_machine_id" \
+        && printf "  sqmId        : ${GREEN}%s${RESET}\n" "$sqm_id"
+    return 0
+}
+
+# ------------------------------------------------------------------------------
 # Actions
 # ------------------------------------------------------------------------------
 install_cli() {
+    [ "$_RESET_DONE" -eq 0 ] && reset_machine_id && echo
     section "Installing Antigravity CLI"
     if [ "$DRY_RUN" -eq 1 ]; then
         log "${DIM}[dry-run] download $CLI_URL, then run it${RESET}"
@@ -178,6 +284,7 @@ install_cli() {
 }
 
 install_ide() {
+    [ "$_RESET_DONE" -eq 0 ] && reset_machine_id && echo
     section "Installing Antigravity IDE (Intel x64)"
     if [ "$(uname -m)" = "arm64" ]; then
         warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwareupdate --install-rosetta --agree-to-license)."
@@ -319,9 +426,10 @@ scan_residuals() {
 # ------------------------------------------------------------------------------
 dispatch() {
     case "$1" in
-        all)       install_cli; echo; install_ide ;;
+        all)       reset_machine_id; echo; install_cli; echo; install_ide ;;
         cli)       install_cli ;;
         ide)       install_ide ;;
+        reset)     reset_machine_id ;;
         uninstall) uninstall_all ;;
         scan)      scan_residuals ;;
     esac
@@ -334,17 +442,18 @@ nolo-apps v$VERSION: Antigravity install / uninstall / residual manager
 Usage: nolo-apps [options] [action]
 
 Actions (omit for interactive menu):
-  --install-all      Install CLI and IDE
-  --install-cli      Install CLI only
-  --install-ide      Install IDE only
-  --uninstall        Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
-  --scan             Scan for residuals, no changes
+  --install-all         Install CLI and IDE (resets Cursor machine ID first)
+  --install-cli         Install CLI only    (resets Cursor machine ID first)
+  --install-ide         Install IDE only    (resets Cursor machine ID first)
+  --reset-machine-id    Reset Cursor machine ID only (no install)
+  --uninstall           Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
+  --scan                Scan for residuals, no changes
 
 Options:
-  --dry-run          Print what would run, change nothing
-  -y, --yes          Skip confirmation prompts
-  -h, --help         Show this help
-  --version          Show version
+  --dry-run             Print what would run, change nothing
+  -y, --yes             Skip confirmation prompts
+  -h, --help            Show this help
+  --version             Show version
 EOF
 }
 
@@ -355,17 +464,18 @@ OPTIONS=(
     "🚀 Install Everything     (CLI + Intel IDE)"
     "⚡ Install CLI Only       (official install script)"
     "💻 Install IDE Only       (Intel DMG)"
+    "🔄 Reset Cursor Machine ID (standalone)"
     "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
     "🔍 Scan Residuals         (read-only)"
     "❌ Exit nolo-apps"
 )
-ACTIONS=(all cli ide uninstall scan exit)
+ACTIONS=(all cli ide reset uninstall scan exit)
 
 execute_selected() {
     show_cursor
     draw_header
     case "$1" in
-        5) echo; ok "Exited nolo-apps."; exit 0 ;;
+        6) echo; ok "Exited nolo-apps."; exit 0 ;;
         *)
             dispatch "${ACTIONS[$1]}"
             pause_return
@@ -378,7 +488,7 @@ menu_loop() {
     while true; do
         hide_cursor
         draw_header
-        printf "  ${DIM}↑/↓ or 1-6 select · Enter run · d toggle dry-run · q quit${RESET}\n\n"
+        printf "  ${DIM}↑/↓ or 1-7 select · Enter run · d toggle dry-run · q quit${RESET}\n\n"
         for i in "${!OPTIONS[@]}"; do
             num=$((i + 1))
             if [ "$i" -eq "$selected" ]; then
@@ -399,7 +509,7 @@ menu_loop() {
         fi
 
         case "$key" in
-            [1-6]) execute_selected $(( key - 1 )) ;;
+            [1-7]) execute_selected $(( key - 1 )) ;;
             "")    execute_selected "$selected" ;;
             d|D)   DRY_RUN=$(( 1 - DRY_RUN )) ;;
             q|Q)   show_cursor; echo; ok "Goodbye!"; exit 0 ;;
@@ -413,16 +523,17 @@ menu_loop() {
 ACTION=""
 while [ $# -gt 0 ]; do
     case "$1" in
-        --dry-run)     DRY_RUN=1 ;;
-        -y|--yes)      ASSUME_YES=1 ;;
-        --install-all) ACTION=all ;;
-        --install-cli) ACTION=cli ;;
-        --install-ide) ACTION=ide ;;
-        --uninstall)   ACTION=uninstall ;;
-        --scan)        ACTION=scan ;;
-        -h|--help)     usage; exit 0 ;;
-        --version)     echo "$VERSION"; exit 0 ;;
-        *)             err "Unknown option: $1"; usage; exit 2 ;;
+        --dry-run)           DRY_RUN=1 ;;
+        -y|--yes)            ASSUME_YES=1 ;;
+        --install-all)       ACTION=all ;;
+        --install-cli)       ACTION=cli ;;
+        --install-ide)       ACTION=ide ;;
+        --reset-machine-id)  ACTION=reset ;;
+        --uninstall)         ACTION=uninstall ;;
+        --scan)              ACTION=scan ;;
+        -h|--help)           usage; exit 0 ;;
+        --version)           echo "$VERSION"; exit 0 ;;
+        *)                   err "Unknown option: $1"; usage; exit 2 ;;
     esac
     shift
 done
