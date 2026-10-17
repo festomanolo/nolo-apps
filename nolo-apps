@@ -112,4 +112,4 @@ found_items() {
         dotfile_targets
         library_matches
     } | while IFS= read -r p; do
-        [ -n "$p" ] && [ -
+        [ -n "$p" ] && [ -e "$p" ] &&
