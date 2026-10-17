@@ -328,4 +328,5 @@ dispatch() {
 }
 
 usage() {
-    cat << E
+    cat << EOF
+nolo-app
