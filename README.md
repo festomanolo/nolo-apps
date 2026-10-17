@@ -91,4 +91,16 @@ export PATH="$HOME/.local/bin:$PATH"
 | `--install-cli` | Install the CLI only |
 | `--install-ide` | Install the IDE only (Intel build) |
 | `--uninstall` | Deep uninstall, with confirmation |
-| `--sc
+| `--scan` | Scan for residuals; changes nothing |
+| `--dry-run` | Print commands without running them. Combine with any action. |
+| `-y`, `--yes` | Skip confirmation prompts |
+| `-h`, `--help` | Show help |
+| `--version` | Print the version |
+
+Examples:
+
+```bash
+# Preview a full removal before doing it
+./nolo-apps --dry-run --uninstall
+
+# Audit a machine in CI or a setup 
