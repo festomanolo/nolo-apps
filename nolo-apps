@@ -28,4 +28,4 @@ trap 'show_cursor; echo; exit 130' INT TERM
 trap 'show_cursor' EXIT
 
 # ------------------------------------------------------------------------------
-# Outp
+# Output helpers
