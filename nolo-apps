@@ -357,4 +357,5 @@ OPTIONS=(
     "💻 Install IDE Only       (Intel DMG)"
     "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
     "🔍 Scan Residuals         (read-only)"
-    "❌ Exit n
+    "❌ Exit nolo-apps"
+)
