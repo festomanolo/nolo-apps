@@ -220,4 +220,4 @@ install_ide() {
     progress_bar 3 4 "Clearing Gatekeeper quarantine..."
     [ "$rc" -eq 0 ] && sudo xattr -dr com.apple.quarantine "/Applications/$IDE_APP" 2>/dev/null
 
-    pro
+    progress_bar 4
