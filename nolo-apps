@@ -238,4 +238,5 @@ uninstall_all() {
     fi
 
     log "${BOLD}The following will be removed:${RESET}"
-    printf '%s\n' "$items" | while IFS= read -r 
+    printf '%s\n' "$items" | while IFS= read -r p; do
+     
