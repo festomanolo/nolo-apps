@@ -427,4 +427,5 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-if [ -n "$ACTION" ]; 
+if [ -n "$ACTION" ]; then
+    di
