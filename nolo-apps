@@ -337,4 +337,5 @@ Actions (omit for interactive menu):
   --install-all      Install CLI and IDE
   --install-cli      Install CLI only
   --install-ide      Install IDE only
-  --uninstall        Deep uninstall (IDE, CLI, residuals, ~/.zshrc lin
+  --uninstall        Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
+  --sc
