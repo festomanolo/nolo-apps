@@ -5,4 +5,4 @@
 # Interactive TUI by default. Scriptable via flags (see --help).
 # Destructive steps are listed and confirmed first; --dry-run prints every
 # command without executing it.
-# =====
+# ===============
