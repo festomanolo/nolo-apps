@@ -138,4 +138,4 @@ draw_header() {
     count=$(found_items | wc -l | tr -d ' ')
     if [ "$count" -gt 0 ]; then count="${YELLOW}${count} item(s)${RESET}"
     else count="${GREEN}0 (clean)${RESET}"; fi
-   
+    [ "$DRY_R
