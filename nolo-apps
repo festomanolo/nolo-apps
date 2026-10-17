@@ -122,4 +122,7 @@ kind_of() {
         */.local/bin/*)                         echo "BINARY" ;;
         "$HOME"/Library/*)                      echo "LIBRARY" ;;
         *)                                      echo "DOTFILE" ;;
-    
+    esac
+}
+
+# -
