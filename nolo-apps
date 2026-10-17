@@ -292,4 +292,4 @@ uninstall_all() {
 }
 
 scan_residuals() {
-    section "S
+    section "Scanning for
