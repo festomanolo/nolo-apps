@@ -338,4 +338,4 @@ Actions (omit for interactive menu):
   --install-cli      Install CLI only
   --install-ide      Install IDE only
   --uninstall        Deep uninstall (IDE, CLI, residuals, ~/.zshrc lines)
-  --scan             Scan fo
+  --scan             Scan for residuals
