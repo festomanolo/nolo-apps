@@ -309,4 +309,5 @@ scan_residuals() {
     if [ "$found" -eq 0 ]; then
         ok "Your Mac is clean. No Antigravity files or residuals found."
     else
-        ec
+        echo
+        
