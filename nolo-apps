@@ -215,4 +215,4 @@ install_ide() {
     fi
 
     progress_bar 2 4 "Copying to /Applications..."
-    sudo rm -rf "/Ap
+    sudo rm -rf "/Applications
