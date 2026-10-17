@@ -16,4 +16,5 @@ ZSH_PATTERN='^[[:space:]]*(export[[:space:]]+PATH=|alias[[:space:]]+agy=).*(anti
 DRY_RUN=0
 ASSUME_YES=0
 
-# ANSI 
+# ANSI styling
+BOL
