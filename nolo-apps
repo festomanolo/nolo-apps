@@ -244,4 +244,4 @@ uninstall_all() {
     zshrc_hits && printf "    ${YELLOW}%-8s${RESET} Antigravity/agy PATH & alias lines in ~/.zshrc (backup kept)\n" "ZSHRC"
     echo
 
-   
+    confirm "P
