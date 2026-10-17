@@ -190,4 +190,4 @@ install_ide() {
         return 0
     fi
 
-    sudo -v || { err "sud
+    sudo -v || { err "sudo authenti
