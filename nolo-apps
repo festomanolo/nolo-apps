@@ -14,3 +14,4 @@ IDE_APP="Antigravity IDE.app"
 ZSH_PATTERN='^[[:space:]]*(export[[:space:]]+PATH=|alias[[:space:]]+agy=).*(antigravity|agy)'
 
 DRY_RUN=0
+ASSUME_YES
