@@ -101,4 +101,7 @@ library_matches() {
 }
 
 zshrc_hits() {
-    [ -f "$HOME/.zshrc" ] && grep -Eq "$ZSH_PATTERN" "$HOME/.zshrc
+    [ -f "$HOME/.zshrc" ] && grep -Eq "$ZSH_PATTERN" "$HOME/.zshrc"
+}
+
+# Ever
