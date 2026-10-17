@@ -355,4 +355,4 @@ OPTIONS=(
     "🚀 Install Everything     (CLI + Intel IDE)"
     "⚡ Install CLI Only       (official install script)"
     "💻 Install IDE Only       (Intel DMG)"
-    "🧹 Deep Uninstall All     (IDE + CLI
+    "🧹 Deep Uninstall All     (IDE + CLI + residual
