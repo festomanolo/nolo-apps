@@ -116,4 +116,5 @@ found_items() {
     done | sort -u
 }
 
-kind_of() 
+kind_of() {
+    case 
