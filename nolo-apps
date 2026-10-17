@@ -260,4 +260,5 @@ uninstall_all() {
     if [ "$total" -gt 0 ]; then
         section "Removing files"
         while IFS= read -r p; do
-            [ -z "$p" ] && cont
+            [ -z "$p" ] && continue
+      
