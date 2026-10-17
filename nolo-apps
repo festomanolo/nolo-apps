@@ -400,4 +400,4 @@ menu_loop() {
 
         case "$key" in
             [1-6]) execute_selected $(( key - 1 )) ;;
-            "") 
+            "")    execute
