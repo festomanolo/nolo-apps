@@ -79,4 +79,5 @@ cli_path() {
     fi
 }
 
-ide_pa
+ide_path() {
+    
