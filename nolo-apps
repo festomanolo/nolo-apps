@@ -200,4 +200,4 @@ install_ide() {
     mkdir "$mnt"
 
     log "${DIM}Source: Google Edge DL (v2.5.5)${RESET}"
-    if ! curl -# -fL -o "$d
+    if ! curl -# -fL -o "$dmg" "$DMG_U
