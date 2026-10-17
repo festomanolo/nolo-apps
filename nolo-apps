@@ -224,4 +224,4 @@ install_ide() {
     hdiutil detach "$mnt" -quiet 2>/dev/null
     rm -rf "$dir"
 
-    if [ "$rc" -eq 0 ]; then ok "Antigravity IDE insta
+    if [ "$rc" -eq 0 ]; then ok "Antigravity IDE installed to /Ap
