@@ -246,4 +246,5 @@ uninstall_all() {
 
     confirm "Proceed with deep uninstall?" || { warn "Cancelled. Nothing was removed."; return 1; }
 
-    if [ "$DRY_RUN" -eq 0 ]; the
+    if [ "$DRY_RUN" -eq 0 ]; then
+        s
