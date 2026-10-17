@@ -303,4 +303,5 @@ scan_residuals() {
 
     if zshrc_hits; then
         printf "  ${YELLOW}%-8s${RESET} Antigravity/agy PATH or alias lines in ~/.zshrc\n" "ZSHRC"
-        found=$((fou
+        found=$((found + 1))
+  
