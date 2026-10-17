@@ -140,4 +140,4 @@ draw_header() {
     else count="${GREEN}0 (clean)${RESET}"; fi
     [ "$DRY_RUN" -eq 1 ] && badge="  ${YELLOW}[DRY-RUN]${RESET}"
 
-    printf " 
+    printf "  ${BOLD}${
