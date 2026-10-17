@@ -393,4 +393,5 @@ menu_loop() {
             IFS= read -rsn2 rest
             case "$rest" in
                 "[A") selected=$(( (selected - 1 + n) % n )) ;;
-                "[B") selected=$(( (selected + 1) %
+                "[B") selected=$(( (selected + 1) % n )) ;;
+  
