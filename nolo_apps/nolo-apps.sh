@@ -488,7 +488,7 @@ menu_loop() {
     while true; do
         hide_cursor
         draw_header
-        printf "  ${DIM}↑/↓ or 1-6 select · Enter run · d toggle dry-run · q quit${RESET}\n\n"
+        printf "  ${DIM}↑/↓ or 1-7 select · Enter run · d toggle dry-run · q quit${RESET}\n\n"
         for i in "${!OPTIONS[@]}"; do
             num=$((i + 1))
             if [ "$i" -eq "$selected" ]; then
