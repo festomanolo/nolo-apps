@@ -57,4 +57,4 @@ confirm() {
 # progress_bar <current> <total> <label>
 progress_bar() {
     local current=$1 total=$2 label=$3 width=32
-    local filled=$(
+    local filled=$(( current *
