@@ -46,4 +46,5 @@ run() {
 }
 
 # Yes/no prompt. -y skips it.
-confirm(
+confirm() {
+    [ 
