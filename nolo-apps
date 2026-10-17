@@ -27,4 +27,4 @@ show_cursor() { printf "\033[?25h"; }
 trap 'show_cursor; echo; exit 130' INT TERM
 trap 'show_cursor' EXIT
 
-#
+# ---------
