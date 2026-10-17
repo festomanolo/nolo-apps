@@ -161,4 +161,5 @@ pause_return() {
 # ------------------------------------------------------------------------------
 install_cli() {
     section "Installing Antigravity CLI"
-    if [ "$DRY_RUN" -eq 1 ]; the
+    if [ "$DRY_RUN" -eq 1 ]; then
+        l
