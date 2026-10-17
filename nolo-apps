@@ -377,4 +377,4 @@ menu_loop() {
     local selected=0 key rest n=${#OPTIONS[@]} i num
     while true; do
         hide_cursor
-       
+        draw_heade
