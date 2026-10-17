@@ -267,4 +267,6 @@ uninstall_all() {
                 /Applications/*) run sudo rm -rf "$p" ;;
                 *)               run rm -rf "$p" ;;
             esac
-        done <<< "$item
+        done <<< "$items"
+    fi
+
