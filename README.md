@@ -103,4 +103,18 @@ Examples:
 # Preview a full removal before doing it
 ./nolo-apps --dry-run --uninstall
 
-# Audit a machine in CI or a setup 
+# Audit a machine in CI or a setup script
+./nolo-apps --scan
+
+# Unattended reinstall
+./nolo-apps --install-ide -y
+```
+
+## What gets removed
+
+`--uninstall` shows this list before it does anything:
+
+| Type | Paths |
+| --- | --- |
+| `APP` | `/Applications/Antigravity IDE.app`, `/Applications/Antigravity.app`, `~/Applications/Antigravity IDE.app` |
+| `BINARY` | `~/.local/bin/agy`, `~/.local/bin/agy-ide`,
