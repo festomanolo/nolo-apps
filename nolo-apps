@@ -363,4 +363,4 @@ ACTIONS=(all cli ide uninstall scan exit)
 
 execute_selected() {
     show_cursor
-    d
+    draw_header
