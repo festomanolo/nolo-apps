@@ -162,4 +162,4 @@ pause_return() {
 install_cli() {
     section "Installing Antigravity CLI"
     if [ "$DRY_RUN" -eq 1 ]; then
-        log "${DIM}[
+        log "${DIM}[dry-run] do
