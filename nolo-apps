@@ -104,4 +104,5 @@ zshrc_hits() {
     [ -f "$HOME/.zshrc" ] && grep -Eq "$ZSH_PATTERN" "$HOME/.zshrc"
 }
 
-# Every existing residual path, one pe
+# Every existing residual path, one per line.
+fou
