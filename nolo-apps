@@ -328,4 +328,4 @@ dispatch() {
 }
 
 usage() {
-  
+    cat << E
