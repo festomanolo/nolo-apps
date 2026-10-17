@@ -182,4 +182,4 @@ install_ide() {
     if [ "$(uname -m)" = "arm64" ]; then
         warn "Intel build on Apple Silicon: runs under Rosetta 2 (softwareupdate --install-rosetta --agree-to-license)."
     fi
-    if ide_path >/d
+    if ide_path >/dev/null; th
