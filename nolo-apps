@@ -232,3 +232,4 @@ uninstall_all() {
     local items total i=0 left
     items=$(found_items)
 
+    if [ -z
