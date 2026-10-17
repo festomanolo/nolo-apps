@@ -117,4 +117,5 @@ found_items() {
 }
 
 kind_of() {
-    case 
+    case "$1" in
+   
