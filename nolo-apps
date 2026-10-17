@@ -324,4 +324,7 @@ dispatch() {
         ide)       install_ide ;;
         uninstall) uninstall_all ;;
         scan)      scan_residuals ;;
-  
+    esac
+}
+
+u
