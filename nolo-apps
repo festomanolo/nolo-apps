@@ -23,3 +23,4 @@ RED="\033[38;5;196m"; YELLOW="\033[38;5;220m"; GRAY="\033[38;5;242m"
 WHITE="\033[38;5;255m"; BG_SELECT="\033[48;5;236m"
 
 hide_cursor() { printf "\033[?25l"; }
+show_curso
