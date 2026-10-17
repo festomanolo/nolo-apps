@@ -469,7 +469,7 @@ OPTIONS=(
     "🔍 Scan Residuals         (read-only)"
     "❌ Exit nolo-apps"
 )
-ACTIONS=(all cli ide uninstall scan exit)
+ACTIONS=(all cli ide reset uninstall scan exit)
 
 execute_selected() {
     show_cursor
