@@ -206,4 +206,4 @@ install_ide() {
 
     progress_bar 1 4 "Mounting disk image..."
     if ! hdiutil attach "$dmg" -mountpoint "$mnt" -nobrowse -readonly -quiet; then
-        err "Could not mo
+        err "Could not mount the dis
