@@ -402,4 +402,4 @@ menu_loop() {
             [1-6]) execute_selected $(( key - 1 )) ;;
             "")    execute_selected "$selected" ;;
             d|D)   DRY_RUN=$(( 1 - DRY_RUN )) ;;
-            q|Q)   show_
+            q|Q)   show_cursor; ech
