@@ -104,4 +104,4 @@ zshrc_hits() {
     [ -f "$HOME/.zshrc" ] && grep -Eq "$ZSH_PATTERN" "$HOME/.zshrc"
 }
 
-# Every existing 
+# Every existing residual p
