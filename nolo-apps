@@ -210,4 +210,4 @@ install_ide() {
     fi
 
     if [ ! -d "$src" ]; then
-   
+        err "'
