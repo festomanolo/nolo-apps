@@ -270,3 +270,4 @@ uninstall_all() {
         done <<< "$items"
     fi
 
+    if zshr
