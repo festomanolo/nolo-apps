@@ -88,4 +88,7 @@ ide_path() {
 }
 
 bin_targets() {
-    printf '%s\n' "$HOME/.local/bin/agy" "$HOME/.local/bin/agy-ide" "$HOME/.local/bin/antigravity
+    printf '%s\n' "$HOME/.local/bin/agy" "$HOME/.local/bin/agy-ide" "$HOME/.local/bin/antigravity-ide"
+}
+
+do
