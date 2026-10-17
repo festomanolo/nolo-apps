@@ -429,4 +429,5 @@ done
 
 if [ -n "$ACTION" ]; then
     dispatch "$ACTION"
-    
+    exit $?
+fi
