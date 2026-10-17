@@ -166,4 +166,5 @@ install_cli() {
         return 0
     fi
     # Download first, then execute: a failed download never runs partial code.
-    local 
+    local tmp
+    tmp
