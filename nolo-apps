@@ -251,4 +251,4 @@ uninstall_all() {
     fi
 
     section "Stopping processes"
-    run pkill -f "/Applications/Antigravi
+    run pkill -f "/Applications/Antigravity IDE.app/
