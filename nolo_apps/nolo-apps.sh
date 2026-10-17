@@ -195,8 +195,6 @@ reset_machine_id() {
     fi
 
     # ---- storage.json -------------------------------------------------------
-    local storage_dir
-    storage_dir=$(dirname "$CURSOR_STORAGE")
     if [ -f "$CURSOR_STORAGE" ]; then
         if [ "$DRY_RUN" -eq 0 ]; then
             cp "$CURSOR_STORAGE" "${CURSOR_STORAGE}.bak.$(date +%Y%m%d_%H%M%S)"
