@@ -199,4 +199,5 @@ install_ide() {
     src="$mnt/$IDE_APP"
     mkdir "$mnt"
 
-    log "${DIM}Source: Google Edge DL (v2.5.5)${RES
+    log "${DIM}Source: Google Edge DL (v2.5.5)${RESET}"
+    if
