@@ -110,4 +110,4 @@ found_items() {
         ide_path
         bin_targets
         dotfile_targets
-       
+        library_ma
