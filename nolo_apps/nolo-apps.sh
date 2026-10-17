@@ -475,7 +475,7 @@ execute_selected() {
     show_cursor
     draw_header
     case "$1" in
-        5) echo; ok "Exited nolo-apps."; exit 0 ;;
+        6) echo; ok "Exited nolo-apps."; exit 0 ;;
         *)
             dispatch "${ACTIONS[$1]}"
             pause_return
