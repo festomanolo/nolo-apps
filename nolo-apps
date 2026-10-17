@@ -161,3 +161,4 @@ pause_return() {
 # ------------------------------------------------------------------------------
 install_cli() {
     section "Installing Antigravity CLI"
+    if [ "
