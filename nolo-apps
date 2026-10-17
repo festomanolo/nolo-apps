@@ -45,4 +45,4 @@ run() {
     "$@"
 }
 
-# Yes/no prompt.
+# Yes/no prompt. -y skips i
