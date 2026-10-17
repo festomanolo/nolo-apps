@@ -19,4 +19,8 @@ Installing and fully removing a macOS app plus its CLI usually means hunting thr
 - **Interactive TUI.** Arrow keys, number keys `1`–`6`, or `q` to quit.
 - **Live status header.** Shows CPU architecture, where the CLI and IDE are installed, and how many residual items remain.
 - **Install** the Antigravity CLI, the Intel IDE, or both, with a progress bar.
-- **Deep uninstall.** Removes the app, CLI binaries, dotfiles, `~/Library` leftovers, and Antigravity PATH/alias line
+- **Deep uninstall.** Removes the app, CLI binaries, dotfiles, `~/Library` leftovers, and Antigravity PATH/alias lines in `~/.zshrc`.
+- **Read-only scan.** Lists every residual path with its type and size. Changes nothing.
+- **Dry run.** Prints every command it would run and executes none of them.
+- **Scriptable.** Every action has a flag for use in shell scripts and automation.
+- **Safe by default.** Deletes are listed and confirmed first. `~/.zshrc` is backed up before it change
