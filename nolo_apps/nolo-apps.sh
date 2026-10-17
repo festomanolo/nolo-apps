@@ -265,6 +265,7 @@ PYEOF
 # Actions
 # ------------------------------------------------------------------------------
 install_cli() {
+    [ "$_RESET_DONE" -eq 0 ] && reset_machine_id && echo
     section "Installing Antigravity CLI"
     if [ "$DRY_RUN" -eq 1 ]; then
         log "${DIM}[dry-run] download $CLI_URL, then run it${RESET}"
