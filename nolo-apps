@@ -228,4 +228,4 @@ install_ide() {
 }
 
 uninstall_all() {
-    section "Deep uninstall: Antigr
+    section "Deep uninstall: Antigravity IDE, 
