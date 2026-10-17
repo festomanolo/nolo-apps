@@ -416,3 +416,4 @@ while [ $# -gt 0 ]; do
         --dry-run)     DRY_RUN=1 ;;
         -y|--yes)      ASSUME_YES=1 ;;
         --install-all) ACTION=all ;;
+        --
