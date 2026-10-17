@@ -75,4 +75,4 @@ cli_path() {
     if [ -x "$HOME/.local/bin/agy" ]; then
         echo "$HOME/.local/bin/agy"
     else
-        command -v
+        command -v agy 2>/dev
