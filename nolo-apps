@@ -192,4 +192,4 @@ install_ide() {
 
     sudo -v || { err "sudo authentication failed."; return 1; }
 
-    local dir 
+    local dir dmg mnt src
