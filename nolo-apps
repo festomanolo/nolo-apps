@@ -279,4 +279,5 @@ uninstall_all() {
 
     if [ "$DRY_RUN" -eq 1 ]; then
         ok "Dry run complete. No changes made."
-       
+        return 0
+ 
