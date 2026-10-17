@@ -74,4 +74,5 @@ progress_bar() {
 cli_path() {
     if [ -x "$HOME/.local/bin/agy" ]; then
         echo "$HOME/.local/bin/agy"
-    el
+    else
+        
