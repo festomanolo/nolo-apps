@@ -160,4 +160,19 @@ The IDE URL is pinned to a version. If it stops working, update `DMG_URL` to the
 | `sudo authentication failed` | Run from a real terminal. `sudo` needs a TTY for the password prompt. |
 | `Could not download` | Check the network, then confirm `DMG_URL` or `CLI_URL` is current. |
 | Scan lists something you want to keep | Remove it by hand, or edit the scan lists in the script. The uninstall prompt always shows the list first. |
-| 
+| Menu looks garbled | Use a terminal with 256-color support (Terminal.app, iTerm2, Ghostty, WezTerm). |
+
+## Project layout
+
+```
+nolo-apps/
+├── nolo-apps    # the entire tool (single Bash script)
+└── README.md    # this file
+```
+
+## Contributing
+
+Small, focused pull requests are welcome.
+
+1. Fork the repo and create a branch.
+2. Run `bash -n nolo-apps` to c
