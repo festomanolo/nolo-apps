@@ -61,4 +61,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 ```
   ⚡ NOLO-APPS v2.0.0 — macOS App & Residual Manager
-  ──────────�
+  ─────────────────────────────────────────────────────────────
+  Arch       : arm64
+  CLI        : ● INSTALLED /Users/you/.local/bin/agy
+  IDE        : ○ NOT FOUND
+  Residuals  : 0 (clean)
+
+  ❯ [1] 🚀 Install Everything     (CLI + Intel IDE)
+     [2] ⚡ Install CLI Onl
