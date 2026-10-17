@@ -56,4 +56,4 @@ confirm() {
 
 # progress_bar <current> <total> <label>
 progress_bar() {
-    local cur
+    local current=$1 tot
