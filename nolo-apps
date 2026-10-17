@@ -329,4 +329,4 @@ dispatch() {
 
 usage() {
     cat << EOF
-nolo-apps v$VERSION: Antigravity install 
+nolo-apps v$VERSION: Antigravity install / uninstall
