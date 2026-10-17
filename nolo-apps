@@ -378,4 +378,4 @@ menu_loop() {
     while true; do
         hide_cursor
         draw_header
-        p
+        printf "  ${
