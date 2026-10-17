@@ -131,4 +131,5 @@ kind_of() {
 draw_header() {
     clear
     local cli ide count badge=""
-    if [ -n "$(cli_path)" ]; then cli="${GREEN}● INSTALLED${RESET} ${DIM}$(cli_path)$
+    if [ -n "$(cli_path)" ]; then cli="${GREEN}● INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
+  
