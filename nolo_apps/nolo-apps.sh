@@ -185,7 +185,7 @@ reset_machine_id() {
         mkdir -p "$mid_dir"
     fi
     if [ "$DRY_RUN" -eq 1 ]; then
-        log "${DIM}[dry-run] write $dev_device_id → $CURSOR_MACHINE_ID_FILE${RESET}"
+        log "${DIM}[dry-run] write $dev_device_id -> $CURSOR_MACHINE_ID_FILE${RESET}"
     else
         if [ -f "$CURSOR_MACHINE_ID_FILE" ]; then
             cp "$CURSOR_MACHINE_ID_FILE" "${CURSOR_MACHINE_ID_FILE}.bak.$(date +%Y%m%d_%H%M%S)"
