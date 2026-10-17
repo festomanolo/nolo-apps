@@ -341,4 +341,5 @@ Actions (omit for interactive menu):
   --scan             Scan for residuals, no changes
 
 Options:
-  --dry-run          Print what would run, change not
+  --dry-run          Print what would run, change nothing
+  -y, 
