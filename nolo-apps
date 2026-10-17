@@ -378,4 +378,4 @@ menu_loop() {
     while true; do
         hide_cursor
         draw_header
-        printf "  ${DIM}↑/↓ or 1-6 select · Enter run · d
+        printf "  ${DIM}↑/↓ or 1-6 select · Enter run · d toggle dry
