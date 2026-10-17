@@ -88,4 +88,4 @@ ide_path() {
 }
 
 bin_targets() {
-    printf 
+    printf '%s\n' "$H
