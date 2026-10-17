@@ -310,4 +310,6 @@ scan_residuals() {
         ok "Your Mac is clean. No Antigravity files or residuals found."
     else
         echo
-        log "${DIM}$found item(s) found. Use 'Deep Uninstall' to remove them.${RESET
+        log "${DIM}$found item(s) found. Use 'Deep Uninstall' to remove them.${RESET}"
+    fi
+}
