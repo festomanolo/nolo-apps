@@ -197,4 +197,6 @@ install_ide() {
     dmg="$dir/antigravity.dmg"
     mnt="$dir/mnt"
     src="$mnt/$IDE_APP"
-    mkdir "$mnt
+    mkdir "$mnt"
+
+    log
