@@ -185,4 +185,4 @@ install_ide() {
     if ide_path >/dev/null; then
         confirm "Antigravity IDE is already installed. Replace it?" || { warn "Skipped."; return 1; }
     fi
-    if [
+    if [ "$DRY_RUN
