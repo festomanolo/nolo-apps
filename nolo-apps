@@ -141,4 +141,4 @@ draw_header() {
     [ "$DRY_RUN" -eq 1 ] && badge="  ${YELLOW}[DRY-RUN]${RESET}"
 
     printf "  ${BOLD}${CYAN}⚡ NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
-    printf "  ${PURPLE}────────�
+    printf "  ${PURPLE}────────────�
