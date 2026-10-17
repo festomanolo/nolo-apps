@@ -238,4 +238,4 @@ uninstall_all() {
     fi
 
     log "${BOLD}The following will be removed:${RESET}"
-    
+    printf '%s\
