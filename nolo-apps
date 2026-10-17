@@ -211,4 +211,5 @@ install_ide() {
 
     if [ ! -d "$src" ]; then
         err "'$IDE_APP' not found inside the disk image."
-        hdiutil detach "$mnt" -quiet; rm -rf "$dir"; r
+        hdiutil detach "$mnt" -quiet; rm -rf "$dir"; return 1
+   
