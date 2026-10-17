@@ -394,4 +394,4 @@ menu_loop() {
             case "$rest" in
                 "[A") selected=$(( (selected - 1 + n) % n )) ;;
                 "[B") selected=$(( (selected + 1) % n )) ;;
-  
+            
