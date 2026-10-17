@@ -160,4 +160,4 @@ pause_return() {
 # Actions
 # ------------------------------------------------------------------------------
 install_cli() {
-    section "Installing Antigr
+    section "Installing Antigravity CLI"
