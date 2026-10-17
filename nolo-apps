@@ -205,4 +205,5 @@ install_ide() {
     fi
 
     progress_bar 1 4 "Mounting disk image..."
-    if ! hdiutil attach "$dmg" -mountpoint "$mnt" -nobrowse -readonly -quie
+    if ! hdiutil attach "$dmg" -mountpoint "$mnt" -nobrowse -readonly -quiet; then
+   
