@@ -105,4 +105,6 @@ zshrc_hits() {
 }
 
 # Every existing residual path, one per line.
-found_items() 
+found_items() {
+    {
+   
