@@ -421,4 +421,5 @@ while [ $# -gt 0 ]; do
         --uninstall)   ACTION=uninstall ;;
         --scan)        ACTION=scan ;;
         -h|--help)     usage; exit 0 ;;
-        --version)     echo "$VERSION"; exi
+        --version)     echo "$VERSION"; exit 0 ;;
+   
