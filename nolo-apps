@@ -355,4 +355,5 @@ OPTIONS=(
     "🚀 Install Everything     (CLI + Intel IDE)"
     "⚡ Install CLI Only       (official install script)"
     "💻 Install IDE Only       (Intel DMG)"
-    "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshr
+    "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
+    "�
