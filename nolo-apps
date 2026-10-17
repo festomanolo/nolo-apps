@@ -403,4 +403,5 @@ menu_loop() {
             "")    execute_selected "$selected" ;;
             d|D)   DRY_RUN=$(( 1 - DRY_RUN )) ;;
             q|Q)   show_cursor; echo; ok "Goodbye!"; exit 0 ;;
-    
+        esac
+  
