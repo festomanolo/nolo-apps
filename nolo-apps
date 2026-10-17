@@ -285,4 +285,5 @@ uninstall_all() {
     left=$(found_items | grep -c .)
     if [ "$left" -eq 0 ] && ! zshrc_hits; then
         ok "Deep uninstall finished. No Antigravity files or residuals remain."
-   
+    else
+     
