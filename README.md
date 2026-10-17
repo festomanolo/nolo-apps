@@ -137,4 +137,14 @@ Before editing `~/.zshrc`, the script copies it to `~/.zshrc.nolo-bak`.
 
 - **Detection** uses `[ -d ]`, `[ -x ]`, and `command -v`. Nothing is cached.
 - **IDE install** downloads the DMG to a temp directory, mounts it read-only at a temp mount point, copies the app to `/Applications`, clears `com.apple.quarantine` so Gatekeeper does not block launch, then detaches the image.
-- **Uninstall*
+- **Uninstall** stops the app by bundle path, removes the list from the scan, and cleans `~/.zshrc`. It re-scans at the end and reports anything left.
+
+## Configuration
+
+Edit the variables at the top of `nolo-apps`:
+
+| Variable | Purpose |
+| --- | --- |
+| `DMG_URL` | IDE disk image URL (currently Antigravity 2.5.5, `darwin-x64`) |
+| `CLI_URL` | CLI install script URL |
+| `IDE_APP`
