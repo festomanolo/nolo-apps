@@ -369,3 +369,4 @@ execute_selected() {
         *)
             dispatch "${ACTIONS[$1]}"
             pause_return
+          
