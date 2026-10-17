@@ -169,4 +169,5 @@ install_cli() {
     local tmp
     tmp=$(mktemp -t nolo-agy) || return 1
     if ! curl -fsSL "$CLI_URL" -o "$tmp"; then
-        err "Could not download the CLI installe
+        err "Could not download the CLI installer."
+       
