@@ -287,4 +287,4 @@ uninstall_all() {
         ok "Deep uninstall finished. No Antigravity files or residuals remain."
     else
         warn "$left residual item(s) could not be removed. Run the scan for details."
-      
+        return 1
