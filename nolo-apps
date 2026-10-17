@@ -190,4 +190,6 @@ install_ide() {
         return 0
     fi
 
-    sudo -v || { err "sudo authentication failed."; retur
+    sudo -v || { err "sudo authentication failed."; return 1; }
+
+   
