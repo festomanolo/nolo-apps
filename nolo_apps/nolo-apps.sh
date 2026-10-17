@@ -37,10 +37,10 @@ trap 'show_cursor' EXIT
 # Output helpers
 # ------------------------------------------------------------------------------
 log()     { printf "  %b\n" "$*"; }
-ok()      { printf "  ${GREEN}✔ %s${RESET}\n" "$*"; }
-warn()    { printf "  ${YELLOW}⚠ %s${RESET}\n" "$*"; }
-err()     { printf "  ${RED}✖ %s${RESET}\n" "$*" >&2; }
-section() { printf "\n  ${CYAN}${BOLD}➜ %s${RESET}\n\n" "$*"; }
+ok()      { printf "  ${GREEN}+ %s${RESET}\n" "$*"; }
+warn()    { printf "  ${YELLOW}! %s${RESET}\n" "$*"; }
+err()     { printf "  ${RED}x %s${RESET}\n" "$*" >&2; }
+section() { printf "\n  ${CYAN}${BOLD}>> %s${RESET}\n\n" "$*"; }
 
 # Run a command, or only print it in dry-run mode.
 run() {
@@ -66,8 +66,8 @@ progress_bar() {
     local filled=$(( current * width / total ))
     local empty=$(( width - filled ))
     local bar="" i
-    for ((i = 0; i < filled; i++)); do bar+="█"; done
-    for ((i = 0; i < empty; i++)); do bar+="░"; done
+    for ((i = 0; i < filled; i++)); do bar+="#"; done
+    for ((i = 0; i < empty; i++)); do bar+="-"; done
     printf "\r  ${PURPLE}[${CYAN}%s${PURPLE}]${RESET} ${BOLD}%3d%%${RESET} %-44s" \
         "$bar" $(( current * 100 / total )) "$label"
     [ "$current" -eq "$total" ] && echo
@@ -137,17 +137,17 @@ kind_of() {
 draw_header() {
     clear
     local cli ide count badge=""
-    if [ -n "$(cli_path)" ]; then cli="${GREEN}● INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
-    else cli="${GRAY}○ NOT FOUND${RESET}"; fi
-    if ide_path >/dev/null; then ide="${GREEN}● INSTALLED${RESET} ${DIM}$(ide_path)${RESET}"
-    else ide="${GRAY}○ NOT FOUND${RESET}"; fi
+    if [ -n "$(cli_path)" ]; then cli="${GREEN}* INSTALLED${RESET} ${DIM}$(cli_path)${RESET}"
+    else cli="${GRAY}- NOT FOUND${RESET}"; fi
+    if ide_path >/dev/null; then ide="${GREEN}* INSTALLED${RESET} ${DIM}$(ide_path)${RESET}"
+    else ide="${GRAY}- NOT FOUND${RESET}"; fi
     count=$(found_items | wc -l | tr -d ' ')
     if [ "$count" -gt 0 ]; then count="${YELLOW}${count} item(s)${RESET}"
     else count="${GREEN}0 (clean)${RESET}"; fi
     [ "$DRY_RUN" -eq 1 ] && badge="  ${YELLOW}[DRY-RUN]${RESET}"
 
-    printf "  ${BOLD}${CYAN}⚡ NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
-    printf "  ${PURPLE}─────────────────────────────────────────────────────────────${RESET}\n"
+    printf "\n  ${BOLD}${CYAN}NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
+    printf "  ${PURPLE}-------------------------------------------------------------${RESET}\n"
     printf "  Arch       : %s\n" "$(uname -m)"
     printf "  CLI        : %b\n" "$cli"
     printf "  IDE        : %b\n" "$ide"
@@ -185,7 +185,7 @@ reset_machine_id() {
         mkdir -p "$mid_dir"
     fi
     if [ "$DRY_RUN" -eq 1 ]; then
-        log "${DIM}[dry-run] write $dev_device_id → $CURSOR_MACHINE_ID_FILE${RESET}"
+        log "${DIM}[dry-run] write $dev_device_id -> $CURSOR_MACHINE_ID_FILE${RESET}"
     else
         if [ -f "$CURSOR_MACHINE_ID_FILE" ]; then
             cp "$CURSOR_MACHINE_ID_FILE" "${CURSOR_MACHINE_ID_FILE}.bak.$(date +%Y%m%d_%H%M%S)"
@@ -195,8 +195,6 @@ reset_machine_id() {
     fi
 
     # ---- storage.json -------------------------------------------------------
-    local storage_dir
-    storage_dir=$(dirname "$CURSOR_STORAGE")
     if [ -f "$CURSOR_STORAGE" ]; then
         if [ "$DRY_RUN" -eq 0 ]; then
             cp "$CURSOR_STORAGE" "${CURSOR_STORAGE}.bak.$(date +%Y%m%d_%H%M%S)"
@@ -293,7 +291,7 @@ install_ide() {
         confirm "Antigravity IDE is already installed. Replace it?" || { warn "Skipped."; return 1; }
     fi
     if [ "$DRY_RUN" -eq 1 ]; then
-        log "${DIM}[dry-run] download DMG → mount → copy '$IDE_APP' to /Applications → strip quarantine → detach${RESET}"
+        log "${DIM}[dry-run] download DMG -> mount -> copy '$IDE_APP' to /Applications -> strip quarantine -> detach${RESET}"
         return 0
     fi
 
@@ -461,13 +459,13 @@ EOF
 # Interactive menu
 # ------------------------------------------------------------------------------
 OPTIONS=(
-    "🚀 Install Everything     (CLI + Intel IDE)"
-    "⚡ Install CLI Only       (official install script)"
-    "💻 Install IDE Only       (Intel DMG)"
-    "🔄 Reset Cursor Machine ID (standalone)"
-    "🧹 Deep Uninstall All     (IDE + CLI + residuals + ~/.zshrc)"
-    "🔍 Scan Residuals         (read-only)"
-    "❌ Exit nolo-apps"
+    "  Install Everything      CLI + Intel IDE"
+    "  Install CLI Only        official install script"
+    "  Install IDE Only        Intel DMG"
+    "  Reset Cursor Machine ID standalone"
+    "  Deep Uninstall All      IDE + CLI + residuals + ~/.zshrc"
+    "  Scan Residuals          read-only"
+    "  Exit"
 )
 ACTIONS=(all cli ide reset uninstall scan exit)
 
@@ -488,13 +486,13 @@ menu_loop() {
     while true; do
         hide_cursor
         draw_header
-        printf "  ${DIM}↑/↓ or 1-7 select · Enter run · d toggle dry-run · q quit${RESET}\n\n"
+        printf "  ${DIM}up/down or 1-7 to select  enter to run  d to toggle dry-run  q to quit${RESET}\n\n"
         for i in "${!OPTIONS[@]}"; do
             num=$((i + 1))
             if [ "$i" -eq "$selected" ]; then
-                printf "  ${BG_SELECT}${CYAN} ❯ [%s] ${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
+                printf "  ${BG_SELECT}${CYAN} > [%s]${BOLD}${WHITE}%s ${RESET}\n" "$num" "${OPTIONS[$i]}"
             else
-                printf "     ${GRAY}[%s]${RESET} %s\n" "$num" "${OPTIONS[$i]}"
+                printf "     ${GRAY}[%s]${RESET}%s\n" "$num" "${OPTIONS[$i]}"
             fi
         done
 
