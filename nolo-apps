@@ -322,4 +322,4 @@ dispatch() {
         all)       install_cli; echo; install_ide ;;
         cli)       install_cli ;;
         ide)       install_ide ;;
-        un
+        uninstall) un
