@@ -262,4 +262,4 @@ uninstall_all() {
         while IFS= read -r p; do
             [ -z "$p" ] && continue
             i=$((i + 1))
-            pr
+            progress_bar
