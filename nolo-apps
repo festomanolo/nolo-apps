@@ -97,4 +97,4 @@ dotfile_targets() {
 }
 
 library_matches() {
-    find "$HOME/Library" -
+    find "$HOME/Library" -maxdepth 3 
