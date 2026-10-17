@@ -264,4 +264,5 @@ uninstall_all() {
             i=$((i + 1))
             progress_bar "$i" "$total" "Removing $(basename "$p")"
             case "$p" in
-                /Applications/*) run sudo rm -rf "$p
+                /Applications/*) run sudo rm -rf "$p" ;;
+      
