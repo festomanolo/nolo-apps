@@ -232,4 +232,5 @@ uninstall_all() {
     local items total i=0 left
     items=$(found_items)
 
-    if [ -z "$items" ] && ! zshrc_hits; the
+    if [ -z "$items" ] && ! zshrc_hits; then
+        o
