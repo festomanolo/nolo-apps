@@ -209,4 +209,4 @@ install_ide() {
         err "Could not mount the disk image."; rm -rf "$dir"; return 1
     fi
 
-    if [ ! 
+    if [ ! -d "$src" ]
