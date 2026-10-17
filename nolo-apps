@@ -272,4 +272,5 @@ uninstall_all() {
 
     if zshrc_hits; then
         section "Cleaning ~/.zshrc"
-        run cp "$HOME/.zshrc" "$HOME/.zshrc.nolo
+        run cp "$HOME/.zshrc" "$HOME/.zshrc.nolo-bak"
+     
