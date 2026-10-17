@@ -306,4 +306,5 @@ scan_residuals() {
         found=$((found + 1))
     fi
 
-    if [ "$found" -eq 0 ]; 
+    if [ "$found" -eq 0 ]; then
+      
