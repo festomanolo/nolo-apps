@@ -41,4 +41,5 @@ run() {
     if [ "$DRY_RUN" -eq 1 ]; then
         printf "  ${DIM}[dry-run] %s${RESET}\n" "$*"
         return 0
-  
+    fi
+    "$
