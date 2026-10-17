@@ -221,4 +221,5 @@ install_ide() {
     [ "$rc" -eq 0 ] && sudo xattr -dr com.apple.quarantine "/Applications/$IDE_APP" 2>/dev/null
 
     progress_bar 4 4 "Detaching and cleaning up..."
-    hdiutil detach "$mnt" -quiet 2>/dev/nu
+    hdiutil detach "$mnt" -quiet 2>/dev/null
+    rm -
