@@ -87,4 +87,4 @@ ide_path() {
     return 1
 }
 
-bin_t
+bin_targets() {
