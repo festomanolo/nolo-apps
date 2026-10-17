@@ -229,4 +229,4 @@ install_ide() {
 
 uninstall_all() {
     section "Deep uninstall: Antigravity IDE, CLI and residuals"
-   
+    local ite
