@@ -523,16 +523,17 @@ menu_loop() {
 ACTION=""
 while [ $# -gt 0 ]; do
     case "$1" in
-        --dry-run)     DRY_RUN=1 ;;
-        -y|--yes)      ASSUME_YES=1 ;;
-        --install-all) ACTION=all ;;
-        --install-cli) ACTION=cli ;;
-        --install-ide) ACTION=ide ;;
-        --uninstall)   ACTION=uninstall ;;
-        --scan)        ACTION=scan ;;
-        -h|--help)     usage; exit 0 ;;
-        --version)     echo "$VERSION"; exit 0 ;;
-        *)             err "Unknown option: $1"; usage; exit 2 ;;
+        --dry-run)           DRY_RUN=1 ;;
+        -y|--yes)            ASSUME_YES=1 ;;
+        --install-all)       ACTION=all ;;
+        --install-cli)       ACTION=cli ;;
+        --install-ide)       ACTION=ide ;;
+        --reset-machine-id)  ACTION=reset ;;
+        --uninstall)         ACTION=uninstall ;;
+        --scan)              ACTION=scan ;;
+        -h|--help)           usage; exit 0 ;;
+        --version)           echo "$VERSION"; exit 0 ;;
+        *)                   err "Unknown option: $1"; usage; exit 2 ;;
     esac
     shift
 done
