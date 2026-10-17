@@ -142,4 +142,4 @@ draw_header() {
 
     printf "  ${BOLD}${CYAN}⚡ NOLO-APPS${RESET} ${DIM}v%s${RESET} — macOS App & Residual Manager%b\n" "$VERSION" "$badge"
     printf "  ${PURPLE}─────────────────────────────────────────────────────────────${RESET}\n"
-    printf "  Arch       :
+    printf "  Arch       : %s\n" "$(u
