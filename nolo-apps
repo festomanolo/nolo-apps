@@ -152,4 +152,4 @@ pause_return() {
     echo
     printf "  ${DIM}Press any key to return to the menu...${RESET}"
     show_cursor
-  
+    IFS= read
