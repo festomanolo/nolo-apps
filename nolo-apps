@@ -329,4 +329,5 @@ dispatch() {
 
 usage() {
     cat << EOF
-nolo-apps v$VERSION: Antigravity install / uninstall / residual
+nolo-apps v$VERSION: Antigravity install / uninstall / residual manager
+
