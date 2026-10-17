@@ -428,4 +428,4 @@ while [ $# -gt 0 ]; do
 done
 
 if [ -n "$ACTION" ]; then
-    di
+    dispatch "$A
