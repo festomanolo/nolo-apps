@@ -256,4 +256,4 @@ uninstall_all() {
     run pkill -x agy 2>/dev/null
     [ "$DRY_RUN" -eq 0 ] && sleep 0.5
 
-    total=$(printf '%s\n'
+    total=$(printf '%s\n' "$items" |
