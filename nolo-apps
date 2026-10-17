@@ -299,4 +299,6 @@ scan_residuals() {
         printf "  ${YELLOW}%-8s${RESET} %s ${DIM}(%s)${RESET}\n" \
             "$(kind_of "$p")" "$p" "$(du -sh "$p" 2>/dev/null | cut -f1)"
         found=$((found + 1))
-    done < <(found_
+    done < <(found_items)
+
+  
