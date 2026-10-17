@@ -172,4 +172,5 @@ install_cli() {
         err "Could not download the CLI installer."
         rm -f "$tmp"; return 1
     fi
-    bash "$tmp"; local 
+    bash "$tmp"; local rc=$?
+    r
