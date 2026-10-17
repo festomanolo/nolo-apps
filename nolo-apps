@@ -45,4 +45,4 @@ run() {
     "$@"
 }
 
-# Yes
+# Yes/no prompt.
