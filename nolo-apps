@@ -237,4 +237,4 @@ uninstall_all() {
         return 0
     fi
 
-    log "${BOLD}The followin
+    log "${BOLD}The following will be r
