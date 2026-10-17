@@ -121,4 +121,4 @@ kind_of() {
         /Applications/*|"$HOME"/Applications/*) echo "APP" ;;
         */.local/bin/*)                         echo "BINARY" ;;
         "$HOME"/Library/*)                      echo "LIBRARY" ;;
-        *)      
+        *)                
