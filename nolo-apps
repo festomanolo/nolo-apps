@@ -76,4 +76,7 @@ cli_path() {
         echo "$HOME/.local/bin/agy"
     else
         command -v agy 2>/dev/null
-    f
+    fi
+}
+
+ide_pa
