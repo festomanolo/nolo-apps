@@ -54,4 +54,4 @@ confirm() {
     [[ "$ans" =~ ^[Yy]$ ]]
 }
 
-# progress_bar <c
+# progress_bar <current> <to
